@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDICT | Advancing Equity, Diversity and Inclusion in Clinical Trials</title>
+    <meta name="description" content="EDICT is a Marie Skłodowska-Curie Doctoral Network training the next generation of researchers to transform equity, diversity and inclusion in clinical trials across Europe.">
+    <meta name="keywords" content="EDICT, clinical trials, equity, diversity, inclusion, EDI, doctoral network, MSCA, Marie Curie, PhD positions, health research">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="EDICT - Advancing Equity, Diversity and Inclusion in Clinical Trials">
+    <meta property="og:description" content="A Marie Skłodowska-Curie Doctoral Network transforming how clinical trials serve diverse populations.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #0D5C63;
+            --color-primary-dark: #094449;
+            --color-primary-light: #44929A;
+            --color-accent: #E07A5F;
+            --color-accent-light: #F2A48B;
+            --color-cream: #FAF8F5;
+            --color-white: #FFFFFF;
+            --color-gray-100: #F5F5F5;
+            --color-gray-200: #E8E8E8;
+            --color-gray-400: #A0A0A0;
+            --color-gray-600: #666666;
+            --color-gray-800: #333333;
+            --color-text: #2D2D2D;
+            --font-display: 'DM Serif Display', Georgia, serif;
+            --font-body: 'DM Sans', system-ui, sans-serif;
+            --max-width: 1200px;
+            --transition: 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            line-height: 1.7;
+            background: var(--color-cream);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 2.75rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        p { margin-bottom: 1rem; }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        a:hover { color: var(--color-accent); }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-gray-200);
+            transition: all var(--transition);
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-gray-600);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--color-primary); }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-primary);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(224, 122, 95, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--color-cream), transparent);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--color-white);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(5px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            color: var(--color-white);
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            animation: fadeInUp 0.8s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--color-accent-light);
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-accent-light);
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--color-accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: var(--color-primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--color-gray-600);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--color-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            color: var(--color-primary-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--color-gray-600);
+            font-size: 1.05rem;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-card {
+            background: var(--color-cream);
+            padding: 2rem;
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: var(--color-accent);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .objective-list {
+            list-style: none;
+        }
+
+        .objective-list li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .objective-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--color-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .objective-text {
+            color: var(--color-gray-800);
+            font-size: 0.95rem;
+        }
+
+        /* Research Areas */
+        .research {
+            background: var(--color-cream);
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .research-card {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--color-gray-200);
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-primary);
+            transform: scaleY(0);
+            transition: transform var(--transition);
+        }
+
+        .research-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .research-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .research-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--color-gray-200);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .research-card h3 {
+            color: var(--color-primary-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .research-card p {
+            color: var(--color-gray-600);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Partners Section */
+        .partners {
+            background: var(--color-primary-dark);
+            color: var(--color-white);
+        }
+
+        .partners .section-label {
+            color: var(--color-accent-light);
+        }
+
+        .partners .section-title {
+            color: var(--color-white);
+        }
+
+        .partners .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .partners-category {
+            margin-bottom: 3rem;
+        }
+
+        .partners-category-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-accent-light);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .partner-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1.25rem;
+            border-radius: 12px;
+            transition: all var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .partner-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .partner-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .partner-country {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* PhD Positions */
+        .positions {
+            background: var(--color-white);
+        }
+
+        .positions-highlight {
+            background: linear-gradient(135deg, var(--color-accent) 0%, #D86A4F 100%);
+            border-radius: 24px;
+            padding: 3rem;
+            color: var(--color-white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .positions-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -25%;
+            width: 50%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+        }
+
+        .positions-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .positions-highlight p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-white {
+            background: var(--color-white);
+            color: var(--color-accent);
+        }
+
+        .btn-white:hover {
+            background: var(--color-cream);
+            color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--color-cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            color: var(--color-primary-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            color: var(--color-gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-value {
+            font-weight: 500;
+            color: var(--color-gray-800);
+        }
+
+        .eu-funding {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 16px;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .eu-logo {
+            width: 80px;
+            height: 80px;
+            background: #003399;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .eu-logo svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        .eu-text {
+            font-size: 0.9rem;
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+
+        .eu-text strong {
+            color: var(--color-gray-800);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-gray-800);
+            color: var(--color-white);
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+        }
+
+        .footer-logo span {
+            color: var(--color-accent);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-white);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            transition: all var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--color-accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-white);
+                flex-direction: column;
+                padding: 1rem 2rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--color-gray-200);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .footer-top,
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero-content {
+                padding: 7rem 1.5rem 4rem;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .positions-highlight {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">EDICT<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#positions">PhD Positions</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Marie Skłodowska-Curie Doctoral Network</div>
+            <h1>Advancing <em>Equity, Diversity</em> and <em>Inclusion</em> in Clinical Trials</h1>
+            <p class="hero-description">Training the next generation of researchers to transform how clinical trials serve diverse populations across Europe and beyond.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">16</div>
+                    <div class="hero-stat-label">Doctoral Candidates</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">€4.3M</div>
+                    <div class="hero-stat-label">EU Funding</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">26</div>
+                    <div class="hero-stat-label">Partner Organisations</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">2026–30</div>
+                    <div class="hero-stat-label">Project Duration</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-label">About EDICT</span>
+                    <h2>Making clinical trials work for everyone</h2>
+                    <p>Clinical trials shape modern medicine. That is why it is crucial to ensure that no population is left out. Unfortunately, a lack of diversity in trial participants risks skewed data and inequitable outcomes.</p>
+                    <p>EDICT establishes an innovative Doctoral Network to transform how equity, diversity, and inclusion (EDI) principles are embedded in clinical trials across Europe. Through a dynamic doctoral network, EDICT will train researchers to redesign how trials are planned, conducted, and assessed.</p>
+                    <p>Drawing on expertise from academia, industry, patient advocacy, and policy, the project plans to deliver practical tools—from bias-detecting AI to inclusive consent processes—creating a future in which clinical trials truly reflect the populations they aim to serve.</p>
+                </div>
+                <div class="about-visual">
+                    <div class="about-card">
+                        <h3 style="color: var(--color-primary-dark); margin-bottom: 1.5rem;">Key Deliverables</h3>
+                        <ul class="objective-list">
+                            <li>
+                                <div class="objective-icon">📊</div>
+                                <span class="objective-text">Standardised metrics for measuring trial diversity</span>
+                            </li>
+                            <li>
+                                <div class="objective-icon">🤖</div>
+                                <span class="objective-text">AI-powered tools for detecting recruitment bias</span>
+                            </li>
+                            <li>
+                                <div class="objective-icon">🌍</div>
+                                <span class="objective-text">Culturally-adapted consent processes</span>
+                            </li>
+                            <li>
+                                <div class="objective-icon">📋</div>
+                                <span class="objective-text">Implementation frameworks for systemic change</span>
+                            </li>
+                            <li>
+                                <div class="objective-icon">🎓</div>
+                                <span class="objective-text">Network of EDI champions driving sustainable improvement</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas Section -->
+    <section class="section research" id="research">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">Research Domains</span>
+                <h2 class="section-title">Four Pillars of Transformation</h2>
+                <p class="section-subtitle">Our doctoral candidates will develop comprehensive expertise across interconnected research domains.</p>
+            </div>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-number">01</div>
+                    <h3>Measuring Diversity</h3>
+                    <p>Developing standardised metrics and frameworks for assessing and reporting diversity in clinical trial populations.</p>
+                </div>
+                <div class="research-card">
+                    <div class="research-number">02</div>
+                    <h3>Innovative Methodologies</h3>
+                    <p>Creating new EDI methodologies including AI-powered bias detection and culturally-responsive research approaches.</p>
+                </div>
+                <div class="research-card">
+                    <div class="research-number">03</div>
+                    <h3>Implementation Tools</h3>
+                    <p>Building practical tools for inclusive recruitment, accessible consent processes, and representative data collection.</p>
+                </div>
+                <div class="research-card">
+                    <div class="research-number">04</div>
+                    <h3>Systemic Change</h3>
+                    <p>Developing frameworks for embedding EDI principles into regulatory guidance, industry practice, and research culture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="section partners" id="partners">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">Our Network</span>
+                <h2 class="section-title">Partners & Collaborators</h2>
+                <p class="section-subtitle">A multi-sector consortium spanning academia, industry, patient advocacy, and regulatory bodies.</p>
+            </div>
+
+            <div class="partners-category">
+                <h4 class="partners-category-title">Beneficiaries</h4>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-name">University of Galway</div>
+                        <div class="partner-country">🇮🇪 Ireland · Coordinator</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">University of Aberdeen</div>
+                        <div class="partner-country">🇬🇧 United Kingdom</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">UMC Utrecht</div>
+                        <div class="partner-country">🇳🇱 Netherlands</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">Hospital La Paz Research Institute</div>
+                        <div class="partner-country">🇪🇸 Spain</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">Croatian Catholic University</div>
+                        <div class="partner-country">🇭🇷 Croatia</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">Université Paris Cité</div>
+                        <div class="partner-country">🇫🇷 France</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partners-category">
+                <h4 class="partners-category-title">Associated Partners</h4>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-name">University of Basel</div>
+                        <div class="partner-country">🇨🇭 Switzerland</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">Uppsala University</div>
+                        <div class="partner-country">🇸🇪 Sweden</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">Aarhus University</div>
+                        <div class="partner-country">🇩🇰 Denmark</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">University of Liverpool</div>
+                        <div class="partner-country">🇬🇧 United Kingdom</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">University of Ottawa</div>
+                        <div class="partner-country">🇨🇦 Canada</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">ECRIN</div>
+                        <div class="partner-country">🇫🇷 France</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">Pfizer Inc</div>
+                        <div class="partner-country">🇺🇸 United States</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">F. Hoffmann-La Roche</div>
+                        <div class="partner-country">🇨🇭 Switzerland</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">Medtronic</div>
+                        <div class="partner-country">🇬🇧 United Kingdom</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">Sense About Science</div>
+                        <div class="partner-country">🇬🇧 United Kingdom</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">Julius Clinical Research</div>
+                        <div class="partner-country">🇳🇱 Netherlands</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-name">Dutch Medicines Evaluation Board</div>
+                        <div class="partner-country">🇳🇱 Netherlands</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PhD Positions Section -->
+    <section class="section positions" id="positions">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">Join Us</span>
+                <h2 class="section-title">PhD Opportunities</h2>
+                <p class="section-subtitle">We will recruit 16 doctoral candidates across our partner institutions.</p>
+            </div>
+            
+            <div class="positions-highlight">
+                <h3>Positions Opening in 2026</h3>
+                <p>EDICT will support 16 doctoral candidates (14 EU-funded, 2 Swiss-funded) in developing solutions that enhance recruitment, improve data inclusivity, and ensure that trial outcomes are representative of broader population needs.</p>
+                <a href="#contact" class="btn btn-white">Register Interest →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section-inner">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <div class="contact-label">Coordinating Institution</div>
+                            <div class="contact-value">University of Galway<br>University Road, H91 Galway, Ireland</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value">edict@universityofgalway.ie</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🔗</div>
+                        <div>
+                            <div class="contact-label">CORDIS Project Page</div>
+                            <div class="contact-value"><a href="https://cordis.europa.eu/project/id/101226601" target="_blank">cordis.europa.eu/project/id/101226601</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="eu-funding">
+                    <div class="eu-logo">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="40" fill="#FFCC00"/>
+                            <g fill="#003399">
+                                <polygon points="50,15 52,22 59,22 53,27 55,34 50,30 45,34 47,27 41,22 48,22"/>
+                                <polygon points="26,26 28,33 35,33 29,38 31,45 26,41 21,45 23,38 17,33 24,33"/>
+                                <polygon points="15,50 17,57 24,57 18,62 20,69 15,65 10,69 12,62 6,57 13,57"/>
+                                <polygon points="26,74 28,81 35,81 29,86 31,93 26,89 21,93 23,86 17,81 24,81"/>
+                                <polygon points="50,85 52,92 59,92 53,97 55,104 50,100 45,104 47,97 41,92 48,92" transform="translate(0,-20)"/>
+                                <polygon points="74,74 76,81 83,81 77,86 79,93 74,89 69,93 71,86 65,81 72,81"/>
+                                <polygon points="85,50 87,57 94,57 88,62 90,69 85,65 80,69 82,62 76,57 83,57"/>
+                                <polygon points="74,26 76,33 83,33 77,38 79,45 74,41 69,45 71,38 65,33 72,33"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="eu-text">
+                        <strong>Funded by the European Union</strong><br>
+                        This project has received funding from the European Union's Horizon Europe research and innovation programme under the Marie Skłodowska-Curie grant agreement No 101226601.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-logo">EDICT<span>.</span></div>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#positions">PhD Positions</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 EDICT Doctoral Network. Grant Agreement No. 101226601</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Smooth reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.research-card, .partner-card, .about-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

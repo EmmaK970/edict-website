@@ -7,7 +7,7 @@ const projects = [
         background: "Equity, diversity, and inclusion (EDI) are vital for valid, fair clinical trials, yet European studies still under-represent key groups (e.g., ethnic minorities, older adults, people with multimorbidity). Despite policy attention, trial teams lack practical, day-to-day guidance. Barriers include restrictive eligibility criteria, limited cultural competence, unconscious bias, weak recruitment infrastructures, and inconsistent reporting.",
         objectives: ["Quantify how EDI is reflected in inclusion/exclusion criteria and reported samples in European trials; assess temporal trends in 5-year intervals.", "Characterize planned EDI-relevant eligibility criteria; examine temporal trends and single- vs. multi-country patterns.", "Identify trials that successfully implemented EDI measures and extract concrete design, recruitment, and retention practices.", "Interview principal investigators to understand how EDI criteria are set, and to surface barriers, facilitators, and training needs.", "Review guidance and expectations on EDI, highlight gaps, and translate findings into practical recommendations."],
         studies: ["<strong>Study 1:</strong> Meta-research study of journal articles - Analyze inclusion/exclusion characteristics in European trials.", "<strong>Study 2:</strong> Meta-research study of trial registry - Analyze the EU Clinical Trials Register from 1993 to present.", "<strong>Study 3:</strong> Case studies of trials that successfully implemented EDI measures.", "<strong>Study 4:</strong> Qualitative study of principal investigators of recently registered trials.", "<strong>Study 5:</strong> Cross-sectional study of regulatory guidelines (EMA and NCAs)."],
-        secondments: ["<strong>Medtronic (months 12-16):</strong> Access to clinical trial datasets and 'Diversity in Clinical Trials' workstream.", "<strong>University of Split (months 22-26):</strong> Regional approaches; opportunity for EMA 'Collaborating Expert' programme."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Master's in health sciences, social sciences, psychology, public health, or related field.",
         academic: "At least 2.1 honours degree with strong Master's grades.",
         mobility: "Must not have resided in Croatia for more than 12 months in the 36 months prior."
@@ -20,7 +20,7 @@ const projects = [
         background: "Randomized controlled trials often fail to represent underserved populations. Demographic characteristics are captured inconsistently, and psychosocial characteristics—health literacy, treatment preferences, financial constraints—are rarely measured. This creates gaps in understanding whether underserved populations respond differently to treatments.",
         objectives: ["Characterize how trials measure demographic and psychosocial patient characteristics.", "Identify and appraise measurement instruments for key characteristics.", "Describe how psychosocial characteristics distribute across underserved groups; explore associations with treatment engagement."],
         studies: ["<strong>Study 1:</strong> Systematic scoping review of case report forms from the CSDR database.", "<strong>Study 2:</strong> Clinimetric measure appraisal for priority characteristics.", "<strong>Study 3:</strong> Measure validation using the ComPaRe e-cohort."],
-        secondments: ["<strong>UMC Utrecht (3-4 months):</strong> Contributing to READI consortium's harmonized EDI descriptors."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Master's in public health, epidemiology, psychology, or related field.",
         academic: "Quantitative research methods; measurement science training; good English.",
         mobility: "Must not have resided in France for more than 12 months in the 36 months prior."
@@ -33,7 +33,7 @@ const projects = [
         background: "While 'inclusive trials' are discussed freely in strategy documents, exactly what a trial has to look like to be called inclusive is unclear. This presents a practical barrier to trialists who want to design, run, analyse and report more inclusive trials.",
         objectives: ["Systematically identify current perspectives on what inclusivity means and how it is measured across jurisdictions.", "Explore what data trial teams should collect to evaluate inclusivity.", "Develop tools and guidance for standardised inclusion measurement and reporting."],
         studies: ["<strong>Study 1:</strong> Evidence synthesis - Systematic/scoping review of inclusivity definitions.", "<strong>Study 2:</strong> Qualitative study with key stakeholders.", "<strong>Study 3:</strong> Focused participatory workshops on measurement.", "<strong>Study 4:</strong> Creating tools and guidance for trial teams."],
-        secondments: ["<strong>ECRIN (months 12-16, France):</strong> International clinical trial infrastructures.", "<strong>WCN (months 22-26, Netherlands):</strong> Inclusivity reporting in cardiovascular research."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Strong undergraduate degree in health sciences, psychology, public health, or related field.",
         academic: "At least 2.1 honours degree. Postgraduate study is an advantage.",
         mobility: "Must not have resided in the UK for more than 12 months in the 36 months prior."
@@ -46,7 +46,7 @@ const projects = [
         background: "The implementation and evaluation of EDI practices in clinical trials remain inconsistent. A core outcome set—a standardized, consensus-based set of outcomes—would enable harmonized reporting, facilitate comparisons, and support evidence synthesis.",
         objectives: ["Systematically summarize existing outcomes used to measure EDI implementation.", "Identify additional potential outcomes and evaluate their advantages and challenges.", "Create a core outcome set through international Delphi process."],
         studies: ["<strong>Study 1:</strong> Scoping review to identify method papers on EDI outcomes.", "<strong>Study 2:</strong> Survey with EDI experts and trialists.", "<strong>Study 3:</strong> International Delphi Process with diverse stakeholders."],
-        secondments: ["<strong>HRB-TMRN, University of Galway (months 12-16):</strong> Delphi process methodologies.", "<strong>Campbell-Cochrane Equity (months 22-26):</strong> Evaluating Delphi results and developing guidance."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Master's in health sciences, social sciences, psychology, public health, or related field.",
         academic: "Completed Master's degree with excellent grades.",
         mobility: "Must not have resided in Switzerland for more than 12 months in the 36 months prior."
@@ -59,7 +59,7 @@ const projects = [
         background: "Clinical trials' narrow eligibility criteria limit generalizability. Target trial emulation is a structured framework to design observational studies that mimic RCTs while reducing bias, potentially generating reliable evidence for underrepresented populations.",
         objectives: ["Assess feasibility of generating evidence using target trial emulation for under-represented populations.", "Identify barriers and possible solutions.", "Develop a framework to guide evidence generation."],
         studies: ["<strong>Study 1:</strong> Assessment of feasibility using data sources like CONSTANCES and SNDS.", "<strong>Study 2:</strong> Identification of barriers through steering committee meetings.", "<strong>Study 3:</strong> Development of a consensus-based framework."],
-        secondments: ["<strong>HRB-TMRN, University of Galway:</strong> Advanced statistical expertise in target trial emulation.", "<strong>UMC Utrecht:</strong> Multivariable modelling and interaction analyses."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Master's in public health (Epidemiology and Statistics specialization) or related field.",
         academic: "Strong academic record; good English.",
         mobility: "Must not have resided in France for more than 12 months in the 36 months prior."
@@ -72,7 +72,7 @@ const projects = [
         background: "Persistent disparities in clinical trial enrollment limit evidence generalisability. Traditional monitoring is retrospective and static, meaning imbalances are noticed late. This project creates practical, ethics-aware AI tools for real-time recruitment monitoring.",
         objectives: ["Develop AI-based monitoring systems for real-time detection of recruitment biases.", "Design a harmonised data pipeline from EDC, CTMS, and IRT systems.", "Create explainable decision-support dashboards co-designed with patient partners.", "Prospectively pilot and evaluate in active studies with industry partner."],
         studies: ["<strong>Study 1:</strong> Problem formalisation, data mapping, and metric framework.", "<strong>Study 2:</strong> Algorithm development and retrospective validation.", "<strong>Study 3:</strong> Prospective pilot with mixed-methods evaluation.", "<strong>Study 4:</strong> Human-centered design and ethical/legal/social implications."],
-        secondments: ["<strong>Pfizer (months 12-16):</strong> Apply algorithms on industry clinical trial datasets.", "<strong>PFMD (months 22-26):</strong> Trial Information Network Project; patient perspectives."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Bachelor's (first/second-class honours) in computer science, data science, statistics, epidemiology, biostatistics, or health informatics. MSc strongly preferred.",
         academic: "Programming proficiency in Python or R.",
         mobility: "Must not have resided in Ireland for more than 12 months in the 36 months prior."
@@ -85,7 +85,7 @@ const projects = [
         background: "Patient information sheets often provide vague or incomplete details about biological samples and data use, particularly disadvantaging underrepresented groups with lower health literacy, linguistic minorities, or socioeconomically disadvantaged participants.",
         objectives: ["Review regulations and guidance on biological samples and data use.", "Analyse patient information sheets for compliance and clarity.", "Explore participant perceptions across sociodemographic groups.", "Investigate decision-making factors for optional consent.", "Formulate recommendations for transparency and cultural competence."],
         studies: ["<strong>Study 1:</strong> Regulatory and policy review.", "<strong>Study 2:</strong> Content analysis of patient information sheets.", "<strong>Study 3:</strong> Participant survey and interviews (mixed-methods).", "<strong>Study 4:</strong> Choice and decision-making analysis.", "<strong>Study 5:</strong> Integration and recommendations."],
-        secondments: ["<strong>Sense About Science (months 12-16):</strong> Communication strategies for consent materials.", "<strong>Julius Clinical (months 22-26):</strong> Piloting improved consent in industry trials."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Master's in health sciences, social sciences, psychology, public health, bioethics, or related field.",
         academic: "At least 2.1 honours degree with strong Master's grades.",
         mobility: "Must not have resided in Spain for more than 12 months in the 36 months prior."
@@ -98,7 +98,7 @@ const projects = [
         background: "Patient advisory groups are essential for making clinical trials more relevant and inclusive, but evidence on how to establish diverse, representative groups remains limited.",
         objectives: ["Review current literature and national initiatives involving patients in clinical trials.", "Develop an action plan for inclusive patient advisory groups.", "Implement a pilot group at FIBHULP.", "Evaluate and make recommendations for future implementations."],
         studies: ["<strong>Study 1:</strong> Preparatory review of patient involvement experiences.", "<strong>Study 2:</strong> Action plan development with patient associations.", "<strong>Study 3:</strong> Implementation of pilot patient advisory group.", "<strong>Study 4:</strong> Evaluation and recommendations."],
-        secondments: ["<strong>Medtronic (months 12-16):</strong> Industry patient engagement strategies.", "<strong>Aarhus University (months 22-26):</strong> Participatory initiatives including PhaseV and FEMaLe Projects."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Official Master's in health sciences, social sciences, psychology, public health, bioethics, or related field.",
         academic: "At least 2.1 honours degree with strong Master's grades.",
         mobility: "Must not have resided in Spain for more than 12 months in the 36 months prior."
@@ -111,7 +111,7 @@ const projects = [
         background: "Clinical trials are not designed to assess subgroup-specific effect sizes. Epidemiological and statistical approaches are needed for meaningful design, analyses, and interpretation of data from diverse trial populations.",
         objectives: ["Determine to what extent trials can be powered to assess treatment effects in population subgroups.", "Determine representativeness of population groups in clinical trials.", "Assess how trial design can be optimised for robust findings in diverse groups."],
         studies: ["<strong>Study 1:</strong> Power for treatment interaction assessment; statistical tool development.", "<strong>Study 2:</strong> Representativeness assessment comparing trial participants to routine care data.", "<strong>Study 3:</strong> Clinical trial design review including stratified sampling and adaptive recruitment."],
-        secondments: ["<strong>Julius Clinical (months 12-16):</strong> Clinical trial design and execution.", "<strong>UPCité (months 22-26):</strong> Causal inference methods for routine care data."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "MSc in epidemiology, pharmacoepidemiology, biostatistics, data science, medicine, or related field.",
         academic: "Strong quantitative background.",
         mobility: "Must not have resided in the Netherlands for more than 12 months in the 36 months prior."
@@ -124,7 +124,7 @@ const projects = [
         background: "While many strategies are proposed to integrate EDI principles into clinical trial design, limited evidence exists on which approaches are effective and for which purpose.",
         objectives: ["Evaluate EDI approaches in cardiovascular clinical trials.", "Determine EDI issues raised during marketing authorisation processes.", "Evaluate and optimize a specific EDI approach in detail.", "Develop guidance for different stakeholders and purposes."],
         studies: ["<strong>Study 1:</strong> EDI approaches in cardiovascular trials using protocols and operational data.", "<strong>Study 2:</strong> EDI issues in market authorisation (EPARs, scientific advice letters).", "<strong>Study 3 & 4:</strong> Evaluation and optimization of specific EDI strategies."],
-        secondments: ["<strong>WCN (months 12-16):</strong> Access to cardiovascular clinical trials.", "<strong>Julius Clinical (months 22-26):</strong> Refining guidance in real-world settings.", "Option for EMA 'Collaborating Expert' programme."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "MSc in epidemiology, pharmacoepidemiology, pharmacy, biostatistics, data science, medicine, or related field.",
         academic: "Strong analytical skills.",
         mobility: "Must not have resided in the Netherlands for more than 12 months in the 36 months prior."
@@ -137,7 +137,7 @@ const projects = [
         background: "While EDI principles are recognized in policy, there is a lack of actionable guidance. Key ethical questions remain: How should protection of vulnerable populations be weighed against promoting equal access? What do fairness and inclusion require in trials?",
         objectives: ["Assess and optimise ethical understanding of fairness and inclusion in research.", "Identify and evaluate ethical aspects of EDI throughout trial processes.", "Develop action-guiding ethical principles and policies."],
         studies: ["<strong>Study 1:</strong> Conceptual analysis of fairness and inclusion.", "<strong>Study 2:</strong> Ethical challenges and opportunities of existing approaches.", "<strong>Study 3:</strong> In-depth ethical assessment of a specific topic.", "<strong>Study 4:</strong> Developing an ethical framework for trialists and ethics committees."],
-        secondments: ["<strong>University of Ottawa (months 12-16):</strong> Implementation science expertise.", "<strong>Medicines Evaluation Board (months 22-26):</strong> Regulatory perspectives."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Master's in philosophy, applied ethics, or sociology.",
         academic: "Strong academic record; English proficiency; Dutch is an advantage.",
         mobility: "Must not have resided in the Netherlands for more than 12 months in the 36 months prior."
@@ -150,7 +150,7 @@ const projects = [
         background: "There is limited practical guidance for trial personnel on embedding EDI principles in day-to-day practices. Barriers such as limited cultural competence, unconscious bias, and lack of inclusive recruitment strategies persist across Europe.",
         objectives: ["Synthesise existing evidence on EDI training.", "Co-design training content with diverse stakeholders.", "Build consensus on core competencies for EDI implementation.", "Pilot, refine, and evaluate practical training modules."],
         studies: ["<strong>Study 1:</strong> Systematic/scoping review of EDI training interventions.", "<strong>Study 2:</strong> Qualitative study with key stakeholders.", "<strong>Study 3:</strong> Delphi/consensus study on core competencies.", "<strong>Study 4:</strong> Pilot and evaluation following MRC guidance."],
-        secondments: ["<strong>Medtronic (months 12-16):</strong> Industry EDI-related training development.", "<strong>PFMD (months 22-26):</strong> Patient engagement and inclusive practice frameworks."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Master's in health sciences, social sciences, psychology, public health, education, implementation science, or related field.",
         academic: "At least 2.1 honours degree with strong Master's grades.",
         mobility: "Must not have resided in Ireland for more than 12 months in the 36 months prior."
@@ -163,7 +163,7 @@ const projects = [
         background: "Dissemination practices often default to technical language and narrow channels, limiting accessibility. This disproportionately affects underrepresented groups, exacerbating inequities and contributing to mistrust in research.",
         objectives: ["Identify best practices in culturally appropriate dissemination.", "Explore stakeholder perspectives on effective dissemination strategies.", "Build consensus on core elements for clinical trial dissemination.", "Develop draft tools ready for future piloting."],
         studies: ["<strong>Study 1:</strong> Scoping Review of dissemination strategies in health research.", "<strong>Study 2:</strong> Qualitative Study with diverse stakeholders.", "<strong>Study 3:</strong> Co-design workshop for essential elements and initial tools."],
-        secondments: ["<strong>Sense About Science (months 12-16):</strong> Public engagement including UK Parliament Evidence Week.", "<strong>Cochrane Equity (months 22-26):</strong> Adapting strategies to diverse cultural settings."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Degree in public health, social sciences, communication studies, implementation science, or related field.",
         academic: "At least 2.1 degree at undergraduate level.",
         mobility: "Must not have resided in Ireland for more than 12 months in the 36 months prior."
@@ -176,7 +176,7 @@ const projects = [
         background: "Patient and public involvement and engagement (PPIE) in clinical trials is already well established. PPIE initiatives typically aim to strengthen patient-relevance in trials, which should include EDI principles. How PPIE could promote EDI remains unclear.",
         objectives: ["Clarify attitudes, current practice, and future plans of PPIE initiatives to consider EDI.", "Identify barriers and facilitators for EDI promotion through PPIE.", "Clarify if and how EDI principles could strengthen PPIE.", "Develop guidance for academia and industry."],
         studies: ["<strong>Study 1:</strong> International survey of PPIE initiatives.", "<strong>Study 2:</strong> Semi-structured interviews with PPIE representatives and EDI experts.", "<strong>Study 3:</strong> Stakeholder workshops to develop guidance."],
-        secondments: ["<strong>UMC Utrecht (months 12-16):</strong> Bioethics and health humanities expertise.", "<strong>Roche (months 22-26):</strong> Industry-specific approaches to PPIE."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Master's in health sciences, social sciences, psychology, public health, education, implementation science, or related field.",
         academic: "Completed Master's degree with excellent grades.",
         mobility: "Must not have resided in Switzerland for more than 12 months in the 36 months prior."
@@ -189,7 +189,7 @@ const projects = [
         background: "Decisions about eligibility, recruitment, and reporting are shaped by multiple actors—trialists, ethics committees, funders, and patients—whose awareness, criteria, and incentives vary. Evidence on how these stakeholders interpret and operationalize EDI is limited.",
         objectives: ["Explore awareness, definitions, and perceived importance of EDI among trialists.", "Quantify EDI-aware practices and identify predictors of stronger implementation.", "Examine how EDI is assessed during protocol review by ethics committees.", "Investigate EDI policies and review criteria among funders.", "Understand patient awareness and interpretation of EDI."],
         studies: ["<strong>Study 1:</strong> Qualitative study among trialists in different European countries.", "<strong>Study 2:</strong> Cross-sectional study among trialists.", "<strong>Study 3:</strong> Qualitative study among ethics committee members.", "<strong>Study 4:</strong> Qualitative study among funders.", "<strong>Study 5:</strong> Qualitative study among patients."],
-        secondments: ["<strong>ECRIN (months 12-16):</strong> Access to European clinical trial networks.", "<strong>University of Split (months 22-26):</strong> Regional insights from Southeastern Europe."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Master's in health sciences, social sciences, psychology, public health, education, implementation science, or related field.",
         academic: "At least 2.1 honours degree with strong Master's grades.",
         mobility: "Must not have resided in Croatia for more than 12 months in the 36 months prior."
@@ -202,7 +202,7 @@ const projects = [
         background: "Translation/interpretation of written materials is often put forward as a way to make trials more inclusive, but discussions with non-native speakers often highlight more important drivers for non-participation such as lack of trust. How to usefully build translation and interpretation into trial planning is poorly understood.",
         objectives: ["Explore how much translation and/or interpretation services are used in trials.", "Systematically collate existing knowledge on when translation/interpretation are essential.", "Develop methods to assess which languages need translation, why, and costs.", "Develop tools and guidance for incorporating language considerations."],
         studies: ["<strong>Study 1:</strong> Evidence synthesis - Systematic/scoping review of translation and interpretation use.", "<strong>Study 2:</strong> Qualitative study with key stakeholders using behavioural frameworks (COM-B/TDF).", "<strong>Study 3:</strong> Method development including decision criteria and mini-MCDA approach.", "<strong>Study 4:</strong> Creating tools and guidance for trial teams."],
-        secondments: ["<strong>CIRCLE, Uppsala (months 12-16):</strong> Discussions with ethnic minority individuals; leveraging Uppsala's work in East Africa.", "<strong>PFMD (months 22-26):</strong> Collaboration with patient engagement experts."],
+        secondments: ["2 secondment placements in leading research institutions and industry partners"],
         degree: "Strong undergraduate degree in health sciences, psychology, public health, implementation science, or related field.",
         academic: "At least 2.1 honours degree with strong track record. Postgraduate study is an advantage.",
         mobility: "Must not have resided in the UK for more than 12 months in the 36 months prior."

@@ -62,8 +62,8 @@
         .about-content h2 { font-size: 42px; margin-bottom: 24px; }
         .about-content p { color: var(--text-medium); margin-bottom: 20px; font-size: 17px; }
         .about-features { display: grid; gap: 20px; margin-top: 40px; }
-        .about-feature { display: flex; gap: 16px; align-items: flex-start; }
-        .about-feature-icon { width: 48px; height: 48px; background: var(--bg-cream); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 24px; }
+        .about-feature { display: flex; gap: 16px; align-items: flex-start; position: relative; padding-left: 24px; }
+        .about-feature::before { content: '•'; position: absolute; left: 0; top: 0; color: var(--primary); font-size: 24px; font-weight: bold; }
         .about-feature h4 { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 17px; margin-bottom: 4px; }
         .about-feature p { font-size: 15px; margin: 0; }
         .about-image { border-radius: 24px; height: 500px; overflow: hidden; }
@@ -907,9 +907,9 @@
                     <p>Clinical trials are the foundation of evidence-based medicine, yet they consistently fail to include the full diversity of patient populations. This limits the applicability of research findings and perpetuates health inequities.</p>
                     <p>EDICT brings together leading universities, research institutions, and industry partners across Europe to address this critical challenge through innovative doctoral training.</p>
                     <div class="about-features">
-                        <div class="about-feature"><div class="about-feature-icon"></div><div><h4>Standardised EDI Metrics</h4><p>Developing core outcome sets for measuring diversity in trials</p></div></div>
-                        <div class="about-feature"><div class="about-feature-icon"></div><div><h4>AI-Powered Solutions</h4><p>Real-time bias detection and inclusive recruitment tools</p></div></div>
-                        <div class="about-feature"><div class="about-feature-icon"></div><div><h4>Pan-European Impact</h4><p>Training researchers across 8 countries with diverse expertise</p></div></div>
+                        <div class="about-feature"><div><h4>Standardised EDI Metrics</h4><p>Developing core outcome sets for measuring diversity in trials</p></div></div>
+                        <div class="about-feature"><div><h4>AI-Powered Solutions</h4><p>Real-time bias detection and inclusive recruitment tools</p></div></div>
+                        <div class="about-feature"><div><h4>Pan-European Impact</h4><p>Training researchers across 8 countries with diverse expertise</p></div></div>
                     </div>
                 </div>
                 <div class="about-image"><img src="clinical trial.jpg" alt="Clinical Trials"></div>

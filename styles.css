@@ -144,7 +144,7 @@ footer { background: var(--text-dark); color: var(--white); padding: 60px 0 30px
 .footer-column li { margin-bottom: 12px; }
 .footer-column a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px; }
 .footer-column a:hover { color: var(--white); }
-.footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; color: rgba(255, 255, 255, 0.4); font-size: 14px; }
+.footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; color: rgba(255, 255, 255, 0.4); font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
 /* Apply Page */
 .apply-hero { min-height: 50vh; padding: 160px 0 80px; background: var(--primary); display: flex; align-items: center; }

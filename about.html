@@ -39,9 +39,6 @@
                     <h2 id="mission">Our Mission</h2>
                     <p>[Placeholder: Information about EDICT's mission and goals will be added here. This section will describe the network's commitment to advancing equity, diversity and inclusion in clinical trials across Europe.]</p>
 
-                    <h2 id="about-network">About the Network</h2>
-                    <p>[Placeholder: Detailed information about the EDICT Doctoral Network will be added here. This section will cover the network's structure, objectives, and impact on clinical trial research.]</p>
-
                     <h2 id="training-programme">Training Programme</h2>
                     <p>[Placeholder: Information about the doctoral training programme will be added here. This section will outline the training opportunities, skills development, and career support provided to doctoral candidates.]</p>
                 </div>
@@ -51,46 +48,349 @@
 
     <section class="partners" id="partners" style="background: var(--bg-light); padding: 100px 0 40px;">
         <div class="container">
-            <div class="section-header" style="text-align: center; max-width: 700px; margin: 0 auto 60px;">
-                <h2 style="font-size: 42px; margin-bottom: 16px;">Our Network</h2>
-                <p style="font-size: 18px; color: var(--text-medium);">A pan-European consortium of leading universities, research institutions, and industry partners</p>
+            <div class="section-header" style="max-width: 100%; margin: 0 0 20px;">
+                <h2 style="font-size: 42px; margin-bottom: 16px; text-align: left;">Our Network</h2>
+                <p style="font-size: 18px; color: var(--text-medium); text-align: left;">A pan-European consortium of leading universities, research institutions, and industry partners</p>
             </div>
             <div style="text-align: center; margin-bottom: 48px;">
-                <img src="consortium.png" alt="EDICT Consortium Network" style="max-width: 70%; height: auto; border-radius: 16px; box-shadow: var(--shadow-lg);">
+                <img src="consortium.png" alt="EDICT Consortium Network" style="max-width: 70%; height: auto; border-radius: 16px; box-shadow: var(--shadow-lg); cursor: pointer;" onclick="openImageModal(this.src)">
             </div>
-            <div class="partners-category" style="margin-bottom: 48px;">
-                <h3 style="font-size: 24px; margin-bottom: 24px;">Beneficiaries</h3>
-                <div class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">University of Galway</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Ireland (Coordinator)</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">University of Aberdeen</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">United Kingdom</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">UMC Utrecht</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Netherlands</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Hospital La Paz Research Institute</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Spain</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Catholic University of Croatia</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Croatia</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Université Paris Cité</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">France</div></div>
+
+            <!-- Partner Cards Carousel -->
+            <div class="partners-carousel-container">
+                <div class="partners-category" style="margin-bottom: 48px;">
+                    <h3 style="font-size: 24px; margin-bottom: 24px; text-align: left;">Beneficiaries</h3>
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev" onclick="moveCarousel('beneficiaries', -1)" aria-label="Previous">‹</button>
+                        <div class="partners-carousel" id="beneficiaries-carousel">
+                            <div class="carousel-track" id="beneficiaries-track">
+                                <div class="partner-card-large"><div class="partner-name">University of Galway</div><div class="partner-country">Ireland (Coordinator)</div></div>
+                                <div class="partner-card-large"><div class="partner-name">University of Aberdeen</div><div class="partner-country">United Kingdom</div></div>
+                                <div class="partner-card-large"><div class="partner-name">UMC Utrecht</div><div class="partner-country">Netherlands</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Hospital La Paz Research Institute</div><div class="partner-country">Spain</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Catholic University of Croatia</div><div class="partner-country">Croatia</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Université Paris Cité</div><div class="partner-country">France</div></div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next" onclick="moveCarousel('beneficiaries', 1)" aria-label="Next">›</button>
+                    </div>
+                    <div class="carousel-dots" id="beneficiaries-dots"></div>
                 </div>
-            </div>
-            <div class="partners-category" style="margin-bottom: 48px;">
-                <h3 style="font-size: 24px; margin-bottom: 24px;">Associated Partners</h3>
-                <div class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">University of Basel</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Switzerland</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">University of Liverpool</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">United Kingdom</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Uppsala University</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Sweden</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Aarhus University</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Denmark</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">University of Split</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Croatia</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">University of Ottawa</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Canada</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">European Clinical Research Infrastructure Network (ECRIN)</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">France</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Pfizer</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Industry Partner</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Roche</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Industry Partner</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Medtronic</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Industry Partner</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Julius Clinical Research</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Netherlands</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">College ter Beoordeling van Geneesmiddelen (CBG)</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Netherlands</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Werkgroep Cardiologische centra Nederland (WCN)</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Netherlands</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Sense About Science</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">United Kingdom</div></div>
-                    <div class="partner-card" style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);"><div class="partner-name" style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">The Synergist</div><div class="partner-country" style="font-size: 13px; color: var(--text-light);">Belgium</div></div>
+
+                <div class="partners-category" style="margin-bottom: 48px;">
+                    <h3 style="font-size: 24px; margin-bottom: 24px; text-align: left;">Associated Partners</h3>
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev" onclick="moveCarousel('associated', -1)" aria-label="Previous">‹</button>
+                        <div class="partners-carousel" id="associated-carousel">
+                            <div class="carousel-track" id="associated-track">
+                                <div class="partner-card-large"><div class="partner-name">University of Basel</div><div class="partner-country">Switzerland</div></div>
+                                <div class="partner-card-large"><div class="partner-name">University of Liverpool</div><div class="partner-country">United Kingdom</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Uppsala University</div><div class="partner-country">Sweden</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Aarhus University</div><div class="partner-country">Denmark</div></div>
+                                <div class="partner-card-large"><div class="partner-name">University of Split</div><div class="partner-country">Croatia</div></div>
+                                <div class="partner-card-large"><div class="partner-name">University of Ottawa</div><div class="partner-country">Canada</div></div>
+                                <div class="partner-card-large"><div class="partner-name">European Clinical Research Infrastructure Network (ECRIN)</div><div class="partner-country">France</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Pfizer</div><div class="partner-country">Industry Partner</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Roche</div><div class="partner-country">Industry Partner</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Medtronic</div><div class="partner-country">Industry Partner</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Julius Clinical Research</div><div class="partner-country">Netherlands</div></div>
+                                <div class="partner-card-large"><div class="partner-name">College ter Beoordeling van Geneesmiddelen (CBG)</div><div class="partner-country">Netherlands</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Werkgroep Cardiologische centra Nederland (WCN)</div><div class="partner-country">Netherlands</div></div>
+                                <div class="partner-card-large"><div class="partner-name">Sense About Science</div><div class="partner-country">United Kingdom</div></div>
+                                <div class="partner-card-large"><div class="partner-name">The Synergist</div><div class="partner-country">Belgium</div></div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next" onclick="moveCarousel('associated', 1)" aria-label="Next">›</button>
+                    </div>
+                    <div class="carousel-dots" id="associated-dots"></div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal" onclick="closeImageModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <style>
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .partners-carousel {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 20px;
+        }
+
+        .partner-card-large {
+            min-width: calc(33.333% - 14px);
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-card-large:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .partner-card-large .partner-name {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .partner-card-large .partner-country {
+            font-size: 15px;
+            color: var(--text-medium);
+        }
+
+        .carousel-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:active {
+            transform: scale(0.95);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        .dot:hover {
+            background: var(--primary-light);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoom 0.3s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 30px;
+            right: 45px;
+            color: #f1f1f1;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            color: #bbb;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .partner-card-large {
+                min-width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .partner-card-large {
+                min-width: 100%;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+        }
+    </style>
+
+    <script>
+        const carouselStates = {
+            beneficiaries: { currentIndex: 0, itemsPerPage: 3 },
+            associated: { currentIndex: 0, itemsPerPage: 3 }
+        };
+
+        function updateCarouselView() {
+            if (window.innerWidth <= 768) {
+                carouselStates.beneficiaries.itemsPerPage = 1;
+                carouselStates.associated.itemsPerPage = 1;
+            } else if (window.innerWidth <= 1024) {
+                carouselStates.beneficiaries.itemsPerPage = 2;
+                carouselStates.associated.itemsPerPage = 2;
+            } else {
+                carouselStates.beneficiaries.itemsPerPage = 3;
+                carouselStates.associated.itemsPerPage = 3;
+            }
+        }
+
+        function initCarousel(carouselId) {
+            const track = document.getElementById(`${carouselId}-track`);
+            const cards = track.children;
+            const dotsContainer = document.getElementById(`${carouselId}-dots`);
+            const state = carouselStates[carouselId];
+
+            updateCarouselView();
+
+            const totalPages = Math.ceil(cards.length / state.itemsPerPage);
+
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < totalPages; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'dot';
+                if (i === 0) dot.classList.add('active');
+                dot.onclick = () => goToPage(carouselId, i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const track = document.getElementById(`${carouselId}-track`);
+            const cards = track.children;
+            const state = carouselStates[carouselId];
+            const totalPages = Math.ceil(cards.length / state.itemsPerPage);
+
+            state.currentIndex += direction;
+
+            if (state.currentIndex < 0) {
+                state.currentIndex = totalPages - 1;
+            } else if (state.currentIndex >= totalPages) {
+                state.currentIndex = 0;
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function goToPage(carouselId, pageIndex) {
+            const state = carouselStates[carouselId];
+            state.currentIndex = pageIndex;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const track = document.getElementById(`${carouselId}-track`);
+            const cards = track.children;
+            const dots = document.querySelectorAll(`#${carouselId}-dots .dot`);
+            const state = carouselStates[carouselId];
+
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 20;
+            const offset = -(state.currentIndex * state.itemsPerPage * (cardWidth + gap));
+
+            track.style.transform = `translateX(${offset}px)`;
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === state.currentIndex);
+            });
+        }
+
+        function openImageModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = src;
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Initialize carousels on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initCarousel('beneficiaries');
+            initCarousel('associated');
+        });
+
+        // Update carousel on window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                updateCarouselView();
+                initCarousel('beneficiaries');
+                initCarousel('associated');
+                updateCarousel('beneficiaries');
+                updateCarousel('associated');
+            }, 250);
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+    </script>
 
     <footer>
         <div class="container">

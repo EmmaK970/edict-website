@@ -82,7 +82,7 @@
         .partner-card { background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow); }
         .partner-name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
         .partner-country { font-size: 13px; color: var(--text-light); }
-        .contact { background: var(--primary); color: var(--white); display: none; }
+        .contact { background: var(--primary); color: var(--white); }
         .contact .section-header h2 { color: var(--white); }
         .contact .section-header p { color: rgba(255,255,255,0.8); }
         .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -947,13 +947,55 @@
         <div class="container">
             <div class="section-header">
                 <h2>Get in Touch</h2>
-                <p>Interested in learning more about EDICT or exploring collaboration opportunities?</p>
+                <p style="font-size: 18px; color: rgba(255,255,255,0.9); margin-bottom: 20px;">For general enquiries about the EDICT network, please contact <a href="mailto:edict@universityofgalway.ie" style="color: var(--white); text-decoration: underline;">edict@universityofgalway.ie</a></p>
+                <p style="font-size: 18px; color: rgba(255,255,255,0.9); margin-top: 40px;">Interested in keeping up to date? Sign up to our Newsletter</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-card"><div class="contact-card-icon">📧</div><h3>Email</h3><a href="/cdn-cgi/l/email-protection#b3d6d7dad0c7f3c6dddac5d6c1c0dac7cadcd5d4d2dfc4d2ca9ddad6"><span class="__cf_email__" data-cfemail="a9cccdc0cadde9dcc7c0dfccdbdac0ddd0c6cfcec8c5dec8d087c0cc">[email&#160;protected]</span></a></div>
-                <div class="contact-card"><div class="contact-card-icon">📍</div><h3>Coordinator</h3><p>University of Galway<br>Galway, Ireland</p></div>
-                <div class="contact-card"><div class="contact-card-icon">🐦</div><h3>Social</h3><a href="#">Follow us on X/Twitter</a></div>
+
+            <div style="max-width: 600px; margin: 40px auto 0;">
+                <div id="mlb2-34752809-contact" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-34752809">
+                    <div class="ml-form-align-center">
+                        <div class="ml-form-embedWrapper embedForm">
+                            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                                <div class="ml-form-embedContent" style=" ">
+                                    <h4>Sign up to the EDICT Newsletter</h4>
+                                    <p>Join our mailing list to receive news about the EDICT Doctoral Network, including notification when applications open in March 2026.</p>
+                                </div>
+                                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1988457/forms/174042978997765341/subscribe" data-code="" method="post" target="_blank">
+                                    <div class="ml-form-formContent">
+                                        <div class="ml-form-fieldRow ml-last-item">
+                                            <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                                <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ml-form-embedPermissions" style="">
+                                        <div class="ml-form-embedPermissionsContent default privacy-policy">
+                                            <p><span style="font-size: 11px;">By clicking subscribe, I agree to receive email updates from EDICT about the doctoral programme, recruitment announcements, and related news.</span></p>
+                                            <p><span style="font-size: 11px;">I&nbsp;understand my data will be stored securely and used only for this purpose. My data may be transferred to an alternative email service provider if required, provided equivalent security and data protection standards are maintained. I can unsubscribe at any time.</span></p>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="ml-submit" value="1">
+                                    <div class="ml-form-embedSubmit">
+                                        <button type="submit" class="primary">Subscribe</button>
+                                        <button disabled="disabled" style="display: none;" type="button" class="loading">
+                                            <div class="ml-form-embedSubmitLoad"></div>
+                                            <span class="sr-only">Loading...</span>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" name="anticsrf" value="true">
+                                </form>
+                            </div>
+                            <div class="ml-form-successBody row-success" style="display: none">
+                                <div class="ml-form-successContent">
+                                    <h4>Thank you!</h4>
+                                    <p>You have successfully joined our subscriber list.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="eu-funding">
                 <img src="EU logo.png" alt="Funded by the European Union" height="50">
                 <p>Funded by the European Union under Grant Agreement No 101226601. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.</p>
@@ -990,6 +1032,27 @@
       $('.ml-subscribe-form-34752809 .row-success').show();
       $('.ml-subscribe-form-34752809 .row-form').hide();
     }
+    </script>
+    <script>
+        // Handle both newsletter forms
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('.ml-block-form');
+            forms.forEach(function(form) {
+                form.addEventListener('submit', function(e) {
+                    const formParent = form.closest('.ml-form-embedContainer');
+                    if (formParent) {
+                        setTimeout(function() {
+                            const successBody = formParent.querySelector('.ml-form-successBody');
+                            const rowForm = formParent.querySelector('.row-form');
+                            if (successBody && rowForm) {
+                                successBody.style.display = 'block';
+                                rowForm.style.display = 'none';
+                            }
+                        }, 1000);
+                    }
+                });
+            });
+        });
     </script>
     <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
     <script>

@@ -115,6 +115,7 @@
             .contact-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .btn-secondary { display: block; margin: 16px 0 0 0; }
+            .newsletter .container > div { grid-template-columns: 1fr !important; }
         }
 
         /* Newsletter Section */
@@ -888,12 +889,16 @@
 
     <section class="newsletter" id="newsletter">
         <div class="container">
-            <div class="section-header">
-                <h2>Get in Touch</h2>
-                <p style="font-size: 18px; color: var(--text-medium); margin-bottom: 20px;">For general enquiries about the EDICT network, please contact <a href="mailto:edict@universityofgalway.ie" style="color: var(--primary); text-decoration: underline;">edict@universityofgalway.ie</a></p>
-                <p style="font-size: 18px; color: var(--text-medium); margin-top: 40px; margin-bottom: 40px;">Interested in keeping up to date? Sign up to our Newsletter</p>
-            </div>
-            <div class="newsletter-content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+                <!-- Get in Touch - Left Side -->
+                <div style="text-align: left;">
+                    <h2 style="font-size: 48px; margin-bottom: 24px; color: var(--primary);">Get in Touch</h2>
+                    <p style="font-size: 18px; color: var(--text-medium); margin-bottom: 24px;">For general enquiries about the EDICT network, please contact <a href="mailto:edict@universityofgalway.ie" style="color: var(--primary); text-decoration: underline;">edict@universityofgalway.ie</a></p>
+                    <p style="font-size: 18px; color: var(--text-medium); margin-top: 40px;">Interested in keeping up to date? Sign up to our Newsletter</p>
+                </div>
+
+                <!-- Newsletter Form - Right Side -->
+                <div>
                 <div id="mlb2-34752809" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-34752809">
                     <div class="ml-form-align-center">
                         <div class="ml-form-embedWrapper embedForm">
@@ -943,6 +948,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

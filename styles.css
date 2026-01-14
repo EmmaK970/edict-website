@@ -135,7 +135,7 @@ section { padding: 100px 0; }
 .eu-funding p { font-size: 14px; color: rgba(255, 255, 255, 0.8); max-width: 600px; }
 
 /* Footer */
-footer { background: #2D6E78; color: var(--white); padding: 60px 0 30px; }
+footer { background: var(--primary); color: var(--white); padding: 60px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
 .footer-brand p { color: rgba(255, 255, 255, 0.6); margin-top: 16px; font-size: 14px; }
 .footer-column h4 { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }

@@ -9,6 +9,131 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .supervisor-card {
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .supervisor-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        .supervisor-card img, .supervisor-card .placeholder-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 16px;
+        }
+        .supervisor-card .placeholder-image {
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--text-light);
+        }
+        .supervisor-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        .supervisor-card .role {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .supervisor-card .location {
+            font-size: 14px;
+            color: var(--text-medium);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 800px;
+            position: relative;
+        }
+        .modal-header {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--border);
+        }
+        .modal-header img, .modal-header .placeholder-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .modal-header .placeholder-image {
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--text-light);
+        }
+        .modal-info h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        .modal-info .role {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .modal-info .location {
+            font-size: 16px;
+            color: var(--text-medium);
+        }
+        .modal-bio {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        .close {
+            position: absolute;
+            right: 24px;
+            top: 24px;
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close:hover {
+            color: var(--primary);
+        }
+        .supervisors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -34,203 +159,471 @@
 
     <section class="apply-content">
         <div class="container">
-            <div class="apply-grid">
-                <div class="apply-main">
+            <div class="supervisors-grid">
 
-                    <div class="candidates-grid" style="display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 40px;">
-
-                        <!-- Dr Eimear Morrissey - EDICT Network Coordinator -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="eimear-morrissey.jpg" alt="Dr Eimear Morrissey" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Dr Eimear Morrissey</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">EDICT Network Coordinator and PhD supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 University of Galway</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Dr Eimear Morrissey is a Lecturer in Evidence-Based Healthcare at the University of Galway and Coordinator of the Marie Skłodowska-Curie Doctoral Network EDICT - Advancing Equity, Diversity and Inclusion in Clinical Trials. She is a applied psychologist who works across applied health research and health research methodology. Her research focuses on patient, caregiver, evaluation of complex interventions, with particular emphasis on equity, inclusion, and person-centred approaches in health research. Her work spans clinical trials methodology, implementation science, and participatory research, including meaningful patient and public involvement across the research lifecycle.</p>
-                            </div>
-                        </div>
-
-                        <!-- Prof Declan Devane -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="declan-devane.jpg" alt="Prof Declan Devane" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Prof Declan Devane</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">EDICT Coordination and PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 University of Galway</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Prof. Declan Devane leads the Centre for Health Research Methodology at University of Galway, bringing together expertise in trials methodology, evidence synthesis, and public engagement to advance health research. He directs multiple research networks including Evidence Synthesis Ireland, Cochrane Ireland, and the HRB-Trials Methodology Research Network. His work focuses on improving healthcare decision-making through rigorous research methodology and evidence-based practice.</p>
-                            </div>
-                        </div>
-
-                        <!-- Dr Sinéad Hynes -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="sinead-hynes.jpg" alt="Dr Sinéad Hynes" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Dr Sinéad Hynes</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 University of Galway</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Dr Sinéad Hynes is an Associate Professor and Head of Discipline of Occupational Therapy (from April 2026) at the University of Galway. She is the Principal Investigator of the Cognitive Occupation-Based programme for people with MS (COB-MS) definitive trial. Her research focuses on developing interventions grounded in occupational science that deliver real-world benefits, shape clinical guidelines, and embed patient and public involvement and EDI at every stage. Dr Hynes' work combines clinical expertise, methodological rigor, and collaborative vision to transform rehabilitation science and improve lives. She has valuable experience in research leadership and has supervise and mentor students at undergraduate and post-graduate (including PhD) level.</p>
-                            </div>
-                        </div>
-
-                        <!-- Dr Conor Judge -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <div class="candidate-image" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 48px; color: var(--text-light);">👤</div>
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Dr Conor Judge</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 University of Galway</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Bio coming soon.</p>
-                            </div>
-                        </div>
-
-                        <!-- Prof Shaun Treweek -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="shaun-treweek.jpeg" alt="Prof Shaun Treweek" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Prof Shaun Treweek</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 University of Aberdeen</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Prof Shaun Treweek is a trial methodologist interested in efficient trial design, particularly around inclusive recruitment and retention. He led the development of the NIHR INCLUDE Ethnicity Framework, a tool to help trialists design inclusive trials, PRioRiTy, a tool to help systematic reviewers consider equity in their reviews, and PRECIS-2, a tool to match trial design decisions to what the users of the results need. He leads an initiative called Trial Forge (http://www.trialforge.org) that aims to be more systematic about how we identify, generate and use research evidence in making trial design, conduct, analysis and reporting decisions.</p>
-                            </div>
-                        </div>
-
-                        <!-- Dr Magdalena Rzewuska -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <div class="candidate-image" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 48px; color: var(--text-light);">👤</div>
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Dr Magdalena Rzewuska</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 University of Aberdeen</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Bio coming soon.</p>
-                            </div>
-                        </div>
-
-                        <!-- Dr Benjamin Speich -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="benjamin-speich.jpg" alt="Dr Benjamin Speich" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Dr Benjamin Speich</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 University of Basel</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Dr Benjamin Speich is a senior researcher working at the Division of Clinical Epidemiology, University Hospital Basel, in Switzerland. His work is focusing on the conduct and methodological aspects of randomised clinical trials, including innovative aspects such as platform trials or hierarchical composite endpoints. He also leads a broad range of research-on-research projects aimed at (i) identifying shortcomings and challenges related to the conduct and validity of clinical trials and (ii) developing solutions to overcome these challenges.</p>
-                            </div>
-                        </div>
-
-                        <!-- Dr Sanne Peters -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="sanne-peters.jpg" alt="Dr Sanne Peters" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Dr Sanne Peters</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 UMC Utrecht</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Dr Sanne Peters is an Associate Professor in Epidemiology and Global Health at the Julius Center for Health Sciences and Primary Care. Her research focuses on sex and gender differences, as well as broader inequities, in cardiovascular diseases. She aims to reliably quantify where those differences exist and to identify the underlying genetic, biological, or behavioral factors. Another important part of her research aims at ensuring that sex and gender, as well as other aspects of diversity, are routinely considered and adequately represented in research and innovation.</p>
-                            </div>
-                        </div>
-
-                        <!-- Dr Mira Zuidgeest -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <div class="candidate-image" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 48px; color: var(--text-light);">👤</div>
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Dr Mira Zuidgeest</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 UMC Utrecht</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Bio coming soon.</p>
-                            </div>
-                        </div>
-
-                        <!-- Dr Rieke van der Graaf -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="rieke-van-der-graaf.jpg" alt="Dr Rieke van der Graaf" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Dr Rieke van der Graaf</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 UMC Utrecht</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Dr Rieke van der Graaf is an Associate Professor of Bioethics at the Julius Center, UMC Utrecht, where she leads the Bioethics and Health Humanities department. Her work centers on research ethics—particularly in relation to vulnerable populations, diversity, equity, and inclusion in research, and the ethical dimensions of innovative trial designs. She also focuses on the ethics of emerging health therapies, as well as global health ethics and climate ethics. She serves as co-director of the WHO Collaborating Center for Bioethics in Utrecht. At UMC Utrecht, she teaches Medical Ethics and Research Ethics at the UMC Utrecht. She organizes an annual Summer School on Global Health Ethics and Equity at Utrecht University.</p>
-                            </div>
-                        </div>
-
-                        <!-- Dr Karolin Krause -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="karolin-krause.jpg" alt="Dr Karolin Krause" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Dr Karolin Krause</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 Paris Cité University</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Dr Karolin Krause is a measurement scientist with the METHODS Team at the Centre for Research in Epidemiology and Statistics (CRESS) at Université Paris Cité. Her work focuses on improving the patient-centeredness, clinimetric quality, and consistency of data collected in comparative effectiveness research to: (a) characterize patient populations for the assessment of external validity and equity; (b) examine moderators contributing to treatment effect heterogeneity; and (c) assess treatment outcomes. Karolin focuses specifically on the measurement of constructs that are grounded in patient experiences and psychosocial context, and that cannot be captured through biological markers. Karolin holds a PhD in Psychology from University College London.</p>
-                            </div>
-                        </div>
-
-                        <!-- Prof Isabelle Boutron -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="isabelle-boutron.jpg" alt="Prof Isabelle Boutron" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Prof Isabelle Boutron</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 Paris Cité University</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Isabelle Boutron is Professor of Epidemiology at Université Paris Cité, Director of the Centre for Research in Epidemiology and Statistics (CRESS), and Director of Cochrane France. Her research focuses on the design, conduct, and reporting of clinical studies. She investigates methodological issues in the assessment of interventions and critically examines methods of evidence synthesis. She has published more than 250 peer-reviewed articles and is internationally recognized for her work on interventional research on research. Professor Boutron has contributed to several international initiatives promoting better reporting and reproducibility in health research. ORCID number : 0000-0002-5263-6241</p>
-                            </div>
-                        </div>
-
-                        <!-- Prof Viet-Thi Tran -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="viet-thi-tran.jpg" alt="Prof Viet-Thi Tran" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Prof Viet-Thi Tran</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 Paris Cité University</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Prof Viet-Thi Tran is a Full Professor of Epidemiology at Université Paris Cité and at the Assistance Publique Hôpitaux de Paris (AP-HIP), in Paris France. He leads a research group around novel methods to generate primary evidence in the METHODS team (CRESS UMR 1153), which is specialized on therapeutic evaluation in chronic conditions. His work revolves around three topics: 1) minimally disruptive medicine, and especially on the use of digital tools to care for patients with chronic conditions; 2) citizen science methods; and 3) novel methods in therapeutic evaluation.</p>
-                            </div>
-                        </div>
-
-                        <!-- Prof. Livia Puljak -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <img src="livia-puljak.jpg" alt="Prof. Livia Puljak" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Prof. Livia Puljak</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Supervisor</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 Catholic University of Croatia</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Livia Puljak is a full, tenured professor at the Catholic University of Croatia, and the Head of its Center for Evidence-Based Medicine. Her research interests include research methodology, evidence-based medicine, and clinical epidemiology. She has published more than 300 articles in international peer-reviewed journals and mentored more than 80 defended Bachelor's, Master's, and PhD theses. She was the inaugural director of Cochrane Croatia. She was listed among the 2% of researchers with the highest citation impact in the world each year since 2020. Detailed CV: https://liviapuljak.eu/cv-en/</p>
-                            </div>
-                        </div>
-
-                        <!-- Supervisor 14 -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <div class="candidate-image" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 48px; color: var(--text-light);">👤</div>
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Supervisor Name</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Project 14</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 Institution</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Brief bio and research expertise will be added here.</p>
-                            </div>
-                        </div>
-
-                        <!-- Supervisor 15 -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <div class="candidate-image" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 48px; color: var(--text-light);">👤</div>
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Supervisor Name</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Project 15</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 Institution</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Brief bio and research expertise will be added here.</p>
-                            </div>
-                        </div>
-
-                        <!-- Supervisor 16 -->
-                        <div class="candidate-card" style="background: var(--bg-light); border-radius: 16px; padding: 24px; display: flex; gap: 24px; align-items: flex-start;">
-                            <div class="candidate-image" style="width: 150px; height: 150px; min-width: 150px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 48px; color: var(--text-light);">👤</div>
-                            <div style="flex: 1;">
-                                <h3 style="font-size: 20px; margin-bottom: 8px; color: var(--primary);">Supervisor Name</h3>
-                                <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px;">PhD Project 16</p>
-                                <p style="font-size: 14px; color: var(--text-medium); margin-bottom: 8px;">📍 Institution</p>
-                                <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">Brief bio and research expertise will be added here.</p>
-                            </div>
-                        </div>
-
-                    </div>
+                <!-- Dr Eimear Morrissey - EDICT Network Coordinator -->
+                <div class="supervisor-card" onclick="openModal('modal1')">
+                    <img src="eimear-morrissey.jpg" alt="Dr Eimear Morrissey">
+                    <h3>Dr Eimear Morrissey</h3>
+                    <p class="role">EDICT Network Coordinator and PhD supervisor</p>
+                    <p class="location">📍 University of Galway</p>
                 </div>
+
+                <!-- Prof Declan Devane -->
+                <div class="supervisor-card" onclick="openModal('modal2')">
+                    <img src="declan-devane.jpg" alt="Prof Declan Devane">
+                    <h3>Prof Declan Devane</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+
+                <!-- Dr Sinéad Hynes -->
+                <div class="supervisor-card" onclick="openModal('modal3')">
+                    <img src="sinead-hynes.jpg" alt="Dr Sinéad Hynes">
+                    <h3>Dr Sinéad Hynes</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+
+                <!-- Dr Conor Judge -->
+                <div class="supervisor-card" onclick="openModal('modal4')">
+                    <div class="placeholder-image">👤</div>
+                    <h3>Dr Conor Judge</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+
+                <!-- Prof Shaun Treweek -->
+                <div class="supervisor-card" onclick="openModal('modal5')">
+                    <img src="shaun-treweek.jpeg" alt="Prof Shaun Treweek">
+                    <h3>Prof Shaun Treweek</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Aberdeen</p>
+                </div>
+
+                <!-- Dr Magdalena Rzewuska -->
+                <div class="supervisor-card" onclick="openModal('modal6')">
+                    <div class="placeholder-image">👤</div>
+                    <h3>Dr Magdalena Rzewuska</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Aberdeen</p>
+                </div>
+
+                <!-- Dr Benjamin Speich -->
+                <div class="supervisor-card" onclick="openModal('modal7')">
+                    <img src="benjamin-speich.jpg" alt="Dr Benjamin Speich">
+                    <h3>Dr Benjamin Speich</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Basel</p>
+                </div>
+
+                <!-- Dr Sanne Peters -->
+                <div class="supervisor-card" onclick="openModal('modal8')">
+                    <img src="sanne-peters.jpg" alt="Dr Sanne Peters">
+                    <h3>Dr Sanne Peters</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 UMC Utrecht</p>
+                </div>
+
+                <!-- Dr Mira Zuidgeest -->
+                <div class="supervisor-card" onclick="openModal('modal9')">
+                    <div class="placeholder-image">👤</div>
+                    <h3>Dr Mira Zuidgeest</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 UMC Utrecht</p>
+                </div>
+
+                <!-- Dr Rieke van der Graaf -->
+                <div class="supervisor-card" onclick="openModal('modal10')">
+                    <img src="rieke-van-der-graaf.jpg" alt="Dr Rieke van der Graaf">
+                    <h3>Dr Rieke van der Graaf</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 UMC Utrecht</p>
+                </div>
+
+                <!-- Dr Karolin Krause -->
+                <div class="supervisor-card" onclick="openModal('modal11')">
+                    <img src="karolin-krause.jpg" alt="Dr Karolin Krause">
+                    <h3>Dr Karolin Krause</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Paris Cité University</p>
+                </div>
+
+                <!-- Prof Isabelle Boutron -->
+                <div class="supervisor-card" onclick="openModal('modal12')">
+                    <img src="isabelle-boutron.jpg" alt="Prof Isabelle Boutron">
+                    <h3>Prof Isabelle Boutron</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Paris Cité University</p>
+                </div>
+
+                <!-- Prof Viet-Thi Tran -->
+                <div class="supervisor-card" onclick="openModal('modal13')">
+                    <img src="viet-thi-tran.jpg" alt="Prof Viet-Thi Tran">
+                    <h3>Prof Viet-Thi Tran</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Paris Cité University</p>
+                </div>
+
+                <!-- Prof. Livia Puljak -->
+                <div class="supervisor-card" onclick="openModal('modal14')">
+                    <img src="livia-puljak.jpg" alt="Prof. Livia Puljak">
+                    <h3>Prof. Livia Puljak</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Catholic University of Croatia</p>
+                </div>
+
+                <!-- Supervisor 15 -->
+                <div class="supervisor-card" onclick="openModal('modal15')">
+                    <div class="placeholder-image">👤</div>
+                    <h3>Supervisor Name</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 La Paz University Hospital</p>
+                </div>
+
+                <!-- Supervisor 16 -->
+                <div class="supervisor-card" onclick="openModal('modal16')">
+                    <div class="placeholder-image">👤</div>
+                    <h3>Supervisor Name</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Institution TBC</p>
+                </div>
+
+                <!-- Supervisor 17 -->
+                <div class="supervisor-card" onclick="openModal('modal17')">
+                    <div class="placeholder-image">👤</div>
+                    <h3>Supervisor Name</h3>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Institution TBC</p>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Modals for each supervisor -->
+    <!-- Modal 1 - Dr Eimear Morrissey -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <div class="modal-header">
+                <img src="eimear-morrissey.jpg" alt="Dr Eimear Morrissey">
+                <div class="modal-info">
+                    <h2>Dr Eimear Morrissey</h2>
+                    <p class="role">EDICT Network Coordinator and PhD supervisor</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Dr Eimear Morrissey is a Lecturer in Evidence-Based Healthcare at the University of Galway and Coordinator of the Marie Skłodowska-Curie Doctoral Network EDICT - Advancing Equity, Diversity and Inclusion in Clinical Trials. She is a applied psychologist who works across applied health research and health research methodology. Her research focuses on patient, caregiver, evaluation of complex interventions, with particular emphasis on equity, inclusion, and person-centred approaches in health research. Her work spans clinical trials methodology, implementation science, and participatory research, including meaningful patient and public involvement across the research lifecycle.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 - Prof Declan Devane -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <div class="modal-header">
+                <img src="declan-devane.jpg" alt="Prof Declan Devane">
+                <div class="modal-info">
+                    <h2>Prof Declan Devane</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Prof. Declan Devane leads the Centre for Health Research Methodology at University of Galway, bringing together expertise in trials methodology, evidence synthesis, and public engagement to advance health research. He directs multiple research networks including Evidence Synthesis Ireland, Cochrane Ireland, and the HRB-Trials Methodology Research Network. His work focuses on improving healthcare decision-making through rigorous research methodology and evidence-based practice.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 - Dr Sinéad Hynes -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <div class="modal-header">
+                <img src="sinead-hynes.jpg" alt="Dr Sinéad Hynes">
+                <div class="modal-info">
+                    <h2>Dr Sinéad Hynes</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Dr Sinéad Hynes is an Associate Professor and Head of Discipline of Occupational Therapy (from April 2026) at the University of Galway. She is the Principal Investigator of the Cognitive Occupation-Based programme for people with MS (COB-MS) definitive trial. Her research focuses on developing interventions grounded in occupational science that deliver real-world benefits, shape clinical guidelines, and embed patient and public involvement and EDI at every stage. Dr Hynes' work combines clinical expertise, methodological rigor, and collaborative vision to transform rehabilitation science and improve lives. She has valuable experience in research leadership and has supervise and mentor students at undergraduate and post-graduate (including PhD) level.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 - Dr Conor Judge -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <div class="modal-header">
+                <div class="placeholder-image">👤</div>
+                <div class="modal-info">
+                    <h2>Dr Conor Judge</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Bio coming soon.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5 - Prof Shaun Treweek -->
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <div class="modal-header">
+                <img src="shaun-treweek.jpeg" alt="Prof Shaun Treweek">
+                <div class="modal-info">
+                    <h2>Prof Shaun Treweek</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Aberdeen</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Prof Shaun Treweek is a trial methodologist interested in efficient trial design, particularly around inclusive recruitment and retention. He led the development of the NIHR INCLUDE Ethnicity Framework, a tool to help trialists design inclusive trials, PRioRiTy, a tool to help systematic reviewers consider equity in their reviews, and PRECIS-2, a tool to match trial design decisions to what the users of the results need. He leads an initiative called Trial Forge (http://www.trialforge.org) that aims to be more systematic about how we identify, generate and use research evidence in making trial design, conduct, analysis and reporting decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6 - Dr Magdalena Rzewuska -->
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <div class="modal-header">
+                <div class="placeholder-image">👤</div>
+                <div class="modal-info">
+                    <h2>Dr Magdalena Rzewuska</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Aberdeen</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Bio coming soon.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 7 - Dr Benjamin Speich -->
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal7')">&times;</span>
+            <div class="modal-header">
+                <img src="benjamin-speich.jpg" alt="Dr Benjamin Speich">
+                <div class="modal-info">
+                    <h2>Dr Benjamin Speich</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 University of Basel</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Dr Benjamin Speich is a senior researcher working at the Division of Clinical Epidemiology, University Hospital Basel, in Switzerland. His work is focusing on the conduct and methodological aspects of randomised clinical trials, including innovative aspects such as platform trials or hierarchical composite endpoints. He also leads a broad range of research-on-research projects aimed at (i) identifying shortcomings and challenges related to the conduct and validity of clinical trials and (ii) developing solutions to overcome these challenges.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 8 - Dr Sanne Peters -->
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal8')">&times;</span>
+            <div class="modal-header">
+                <img src="sanne-peters.jpg" alt="Dr Sanne Peters">
+                <div class="modal-info">
+                    <h2>Dr Sanne Peters</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 UMC Utrecht</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Dr Sanne Peters is an Associate Professor in Epidemiology and Global Health at the Julius Center for Health Sciences and Primary Care. Her research focuses on sex and gender differences, as well as broader inequities, in cardiovascular diseases. She aims to reliably quantify where those differences exist and to identify the underlying genetic, biological, or behavioral factors. Another important part of her research aims at ensuring that sex and gender, as well as other aspects of diversity, are routinely considered and adequately represented in research and innovation.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 9 - Dr Mira Zuidgeest -->
+    <div id="modal9" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal9')">&times;</span>
+            <div class="modal-header">
+                <div class="placeholder-image">👤</div>
+                <div class="modal-info">
+                    <h2>Dr Mira Zuidgeest</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 UMC Utrecht</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Bio coming soon.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 10 - Dr Rieke van der Graaf -->
+    <div id="modal10" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal10')">&times;</span>
+            <div class="modal-header">
+                <img src="rieke-van-der-graaf.jpg" alt="Dr Rieke van der Graaf">
+                <div class="modal-info">
+                    <h2>Dr Rieke van der Graaf</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 UMC Utrecht</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Dr Rieke van der Graaf is an Associate Professor of Bioethics at the Julius Center, UMC Utrecht, where she leads the Bioethics and Health Humanities department. Her work centers on research ethics—particularly in relation to vulnerable populations, diversity, equity, and inclusion in research, and the ethical dimensions of innovative trial designs. She also focuses on the ethics of emerging health therapies, as well as global health ethics and climate ethics. She serves as co-director of the WHO Collaborating Center for Bioethics in Utrecht. At UMC Utrecht, she teaches Medical Ethics and Research Ethics at the UMC Utrecht. She organizes an annual Summer School on Global Health Ethics and Equity at Utrecht University.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 11 - Dr Karolin Krause -->
+    <div id="modal11" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal11')">&times;</span>
+            <div class="modal-header">
+                <img src="karolin-krause.jpg" alt="Dr Karolin Krause">
+                <div class="modal-info">
+                    <h2>Dr Karolin Krause</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Paris Cité University</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Dr Karolin Krause is a measurement scientist with the METHODS Team at the Centre for Research in Epidemiology and Statistics (CRESS) at Université Paris Cité. Her work focuses on improving the patient-centeredness, clinimetric quality, and consistency of data collected in comparative effectiveness research to: (a) characterize patient populations for the assessment of external validity and equity; (b) examine moderators contributing to treatment effect heterogeneity; and (c) assess treatment outcomes. Karolin focuses specifically on the measurement of constructs that are grounded in patient experiences and psychosocial context, and that cannot be captured through biological markers. Karolin holds a PhD in Psychology from University College London.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 12 - Prof Isabelle Boutron -->
+    <div id="modal12" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal12')">&times;</span>
+            <div class="modal-header">
+                <img src="isabelle-boutron.jpg" alt="Prof Isabelle Boutron">
+                <div class="modal-info">
+                    <h2>Prof Isabelle Boutron</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Paris Cité University</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Isabelle Boutron is Professor of Epidemiology at Université Paris Cité, Director of the Centre for Research in Epidemiology and Statistics (CRESS), and Director of Cochrane France. Her research focuses on the design, conduct, and reporting of clinical studies. She investigates methodological issues in the assessment of interventions and critically examines methods of evidence synthesis. She has published more than 250 peer-reviewed articles and is internationally recognized for her work on interventional research on research. Professor Boutron has contributed to several international initiatives promoting better reporting and reproducibility in health research. ORCID number : 0000-0002-5263-6241
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 13 - Prof Viet-Thi Tran -->
+    <div id="modal13" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal13')">&times;</span>
+            <div class="modal-header">
+                <img src="viet-thi-tran.jpg" alt="Prof Viet-Thi Tran">
+                <div class="modal-info">
+                    <h2>Prof Viet-Thi Tran</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Paris Cité University</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Prof Viet-Thi Tran is a Full Professor of Epidemiology at Université Paris Cité and at the Assistance Publique Hôpitaux de Paris (AP-HIP), in Paris France. He leads a research group around novel methods to generate primary evidence in the METHODS team (CRESS UMR 1153), which is specialized on therapeutic evaluation in chronic conditions. His work revolves around three topics: 1) minimally disruptive medicine, and especially on the use of digital tools to care for patients with chronic conditions; 2) citizen science methods; and 3) novel methods in therapeutic evaluation.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 14 - Prof. Livia Puljak -->
+    <div id="modal14" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal14')">&times;</span>
+            <div class="modal-header">
+                <img src="livia-puljak.jpg" alt="Prof. Livia Puljak">
+                <div class="modal-info">
+                    <h2>Prof. Livia Puljak</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Catholic University of Croatia</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Livia Puljak is a full, tenured professor at the Catholic University of Croatia, and the Head of its Center for Evidence-Based Medicine. Her research interests include research methodology, evidence-based medicine, and clinical epidemiology. She has published more than 300 articles in international peer-reviewed journals and mentored more than 80 defended Bachelor's, Master's, and PhD theses. She was the inaugural director of Cochrane Croatia. She was listed among the 2% of researchers with the highest citation impact in the world each year since 2020. Detailed CV: https://liviapuljak.eu/cv-en/
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 15 - Supervisor 15 -->
+    <div id="modal15" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal15')">&times;</span>
+            <div class="modal-header">
+                <div class="placeholder-image">👤</div>
+                <div class="modal-info">
+                    <h2>Supervisor Name</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 La Paz University Hospital</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Brief bio and research expertise will be added here.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 16 - Supervisor 16 -->
+    <div id="modal16" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal16')">&times;</span>
+            <div class="modal-header">
+                <div class="placeholder-image">👤</div>
+                <div class="modal-info">
+                    <h2>Supervisor Name</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Institution TBC</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Brief bio and research expertise will be added here.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 17 - Supervisor 17 -->
+    <div id="modal17" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal17')">&times;</span>
+            <div class="modal-header">
+                <div class="placeholder-image">👤</div>
+                <div class="modal-info">
+                    <h2>Supervisor Name</h2>
+                    <p class="role">PhD Supervisor</p>
+                    <p class="location">📍 Institution TBC</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                Brief bio and research expertise will be added here.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
 
     <footer>
         <div class="container">

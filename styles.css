@@ -73,8 +73,7 @@ section { padding: 100px 0; }
 /* Research */
 .research { background: var(--bg-light); }
 .research-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-.research-card { background: var(--white); padding: 32px; border-radius: 16px; box-shadow: var(--shadow); transition: all 0.3s; }
-.research-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.research-card { background: var(--white); padding: 32px; border-radius: 16px; box-shadow: var(--shadow); }
 .research-card-number { font-family: 'DM Serif Display', serif; font-size: 48px; color: var(--primary); opacity: 0.3; margin-bottom: 16px; }
 .research-card h3 { font-size: 22px; margin-bottom: 12px; }
 .research-card p { font-size: 15px; color: var(--text-medium); }

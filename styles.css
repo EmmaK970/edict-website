@@ -36,7 +36,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; background: var(--white); bord
 .hero { min-height: 70vh; padding: 100px 0 800px; background: var(--primary); }
 .hero .container { min-height: calc(60vh - 200px); display: flex; flex-direction: column; justify-content: center; }
 .hero-content { max-width: 800px; }
-.hero-badge { display: inline-block; background: rgba(255,255,255,0.2); color: var(--white); padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; margin-bottom: 24px; }
+.hero-badge { display: block; background: rgba(255,255,255,0.2); color: var(--white); padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; margin-bottom: 24px; margin-left: auto; margin-right: auto; width: fit-content; }
 .hero h1 { font-size: clamp(40px, 6vw, 64px); color: var(--white); margin-bottom: 24px; }
 .hero h1 em { color: var(--highlight); font-style: normal; }
 .hero p { font-size: 20px; color: rgba(255,255,255,0.9); margin-bottom: 40px; max-width: 600px; }

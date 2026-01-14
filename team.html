@@ -674,6 +674,14 @@
                 event.target.style.display = 'none';
             }
         }
+
+        // Open modal if URL has a hash (e.g., team.html#modal1)
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.substring(1); // Remove the # symbol
+            if (hash && document.getElementById(hash)) {
+                openModal(hash);
+            }
+        });
     </script>
 
     <footer>

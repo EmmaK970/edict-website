@@ -266,12 +266,18 @@
     </footer>
 
     <script>
+    // Prevent default anchor scroll on page load
+    if (window.location.hash) {
+        window.scrollTo(0, 0);
+        setTimeout(function() { window.scrollTo(0, 0); }, 1);
+    }
+
     // Handle anchor link clicks within the page
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            const offset = 120; // Account for fixed navigation height
+            const offset = 140; // Account for fixed navigation height plus extra space
             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({ top: targetPosition, behavior: 'smooth' });
         });
@@ -283,11 +289,11 @@
             setTimeout(function() {
                 const target = document.querySelector(window.location.hash);
                 if (target) {
-                    const offset = 120;
+                    const offset = 140;
                     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
                     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
-            }, 100);
+            }, 300);
         }
     });
     </script>

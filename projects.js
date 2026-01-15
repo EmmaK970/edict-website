@@ -41,7 +41,7 @@ const projects = [
     {
         id: 4, wp: "WP1 - Measurement", location: "Basel, Switzerland",
         title: "Developing a Core Outcome Set for EDI Implementation",
-        supervisors: ["Dr. Benjamin Speich (University Hospital Basel)", "Prof. Matthias Briel (University Hospital Basel)"],
+        supervisors: ["Dr. Benjamin Speich (University of Basel)", "Prof. Matthias Briel (University of Basel)"],
         summary: "Creating a standardized, consensus-based set of outcomes to measure and report EDI implementation in clinical trials through scoping review, survey, and international Delphi process.",
         background: "The implementation and evaluation of EDI practices in clinical trials remain inconsistent. A core outcome set—a standardized, consensus-based set of outcomes—would enable harmonized reporting, facilitate comparisons, and support evidence synthesis.",
         objectives: ["Systematically summarize existing outcomes used to measure EDI implementation.", "Identify additional potential outcomes and evaluate their advantages and challenges.", "Create a core outcome set through international Delphi process."],
@@ -171,7 +171,7 @@ const projects = [
     {
         id: 14, wp: "WP4 - Systemic Change", location: "Basel, Switzerland",
         title: "Interactions Between PPIE and EDI",
-        supervisors: ["Prof. Matthias Briel (University Hospital Basel)", "Dr. Benjamin Speich (University Hospital Basel)"],
+        supervisors: ["Prof. Matthias Briel (University of Basel)", "Dr. Benjamin Speich (University of Basel)"],
         summary: "Investigating how patient and public involvement and engagement (PPIE) initiatives consider EDI and developing guidance for effective EDI implementation through PPIE.",
         background: "Patient and public involvement and engagement (PPIE) in clinical trials is already well established. PPIE initiatives typically aim to strengthen patient-relevance in trials, which should include EDI principles. How PPIE could promote EDI remains unclear.",
         objectives: ["Clarify attitudes, current practice, and future plans of PPIE initiatives to consider EDI.", "Identify barriers and facilitators for EDI promotion through PPIE.", "Clarify if and how EDI principles could strengthen PPIE.", "Develop guidance for academia and industry."],

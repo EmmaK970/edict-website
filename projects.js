@@ -80,7 +80,7 @@ const projects = [
     {
         id: 7, wp: "WP2 - Methodologies", location: "Madrid, Spain",
         title: "Enhancing EDI in Informed Consent for Biological Samples and Data",
-        supervisors: ["Dr. Alberto Borobia (Universidad Autónoma de Madrid)", "Dr. Irene García García (Universidad Autónoma de Madrid)"],
+        supervisors: ["Dr. Alberto Borobia (La Paz University Hospital)", "Dr. Irene García García (La Paz University Hospital)"],
         summary: "Examining how participants understand information about biological samples and data use, analysing how comprehension varies across sociodemographic groups.",
         background: "Patient information sheets often provide vague or incomplete details about biological samples and data use, particularly disadvantaging underrepresented groups with lower health literacy, linguistic minorities, or socioeconomically disadvantaged participants.",
         objectives: ["Review regulations and guidance on biological samples and data use.", "Analyse patient information sheets for compliance and clarity.", "Explore participant perceptions across sociodemographic groups.", "Investigate decision-making factors for optional consent.", "Formulate recommendations for transparency and cultural competence."],
@@ -93,10 +93,10 @@ const projects = [
     {
         id: 8, wp: "WP2 - Methodologies", location: "Madrid, Spain",
         title: "Developing Inclusive Patient Advisory Groups for Clinical Trials",
-        supervisors: ["Dr. Maria Cristina Murano (FIBHULP)", "Dr. Alberto Borobia (Universidad Autónoma de Madrid)"],
+        supervisors: ["Dr. Cristina Murano (La Paz University Hospital)", "Dr. Alberto Borobia (La Paz University Hospital)"],
         summary: "Developing, implementing, and evaluating strategies for creating inclusive and culturally diverse patient advisory groups across Spanish hospitals.",
         background: "Patient advisory groups are essential for making clinical trials more relevant and inclusive, but evidence on how to establish diverse, representative groups remains limited.",
-        objectives: ["Review current literature and national initiatives involving patients in clinical trials.", "Develop an action plan for inclusive patient advisory groups.", "Implement a pilot group at FIBHULP.", "Evaluate and make recommendations for future implementations."],
+        objectives: ["Review current literature and national initiatives involving patients in clinical trials.", "Develop an action plan for inclusive patient advisory groups.", "Implement a pilot group at La Paz University Hospital.", "Evaluate and make recommendations for future implementations."],
         studies: ["<strong>Study 1:</strong> Preparatory review of patient involvement experiences.", "<strong>Study 2:</strong> Action plan development with patient associations.", "<strong>Study 3:</strong> Implementation of pilot patient advisory group.", "<strong>Study 4:</strong> Evaluation and recommendations."],
         secondments: ["Two secondment placements in leading research institutions and industry partners"],
         degree: "Official Master's in health sciences, social sciences, psychology, public health, bioethics, or related field.",

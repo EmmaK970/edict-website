@@ -188,7 +188,7 @@
         const modalId = supervisorModalMap[name];
 
         if (modalId) {
-            return `<a href="team.html#${modalId}" style="color: var(--primary); text-decoration: none; font-weight: 600;">${supervisorText}</a>`;
+            return `<a href="team.html#${modalId}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none; font-weight: 600;">${supervisorText}</a>`;
         }
         return supervisorText;
     }

@@ -66,6 +66,13 @@
         .accordion-content-inner { padding: 0 28px 28px 108px; }
         .accordion-content p { font-size: 15px; color: var(--text-medium); line-height: 1.7; }
 
+        /* Filter buttons */
+        .filter-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+        .filter-btn { background: var(--white); border: 2px solid var(--border); padding: 10px 20px; border-radius: 25px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s; color: var(--text-medium); }
+        .filter-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+        .filter-btn.active { background: var(--primary); border-color: var(--primary); color: var(--white); }
+        .project-card.hidden { display: none; }
+
         @media (max-width: 1024px) {
             .projects-grid { grid-template-columns: 1fr; }
             .accordion-content-inner { padding-left: 28px; }
@@ -173,6 +180,13 @@
             <div class="section-header" style="max-width: 100%; margin: 0 0 40px;">
                 <h2 style="font-size: 42px; margin-bottom: 16px; text-align: left;">PhD Positions</h2>
                 <p style="font-size: 18px; color: var(--text-medium); text-align: left;">Join our doctoral network and help transform equity, diversity and inclusion in clinical trials. Click on any project to view full details.</p>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
+                    <button class="filter-btn" onclick="filterProjects('WP1')">WP1 - Measurement</button>
+                    <button class="filter-btn" onclick="filterProjects('WP2')">WP2 - Methodologies</button>
+                    <button class="filter-btn" onclick="filterProjects('WP3')">WP3 - Implementation</button>
+                    <button class="filter-btn" onclick="filterProjects('WP4')">WP4 - Systemic Change</button>
+                </div>
             </div>
             <div class="projects-grid" id="projects-container"></div>
         </div>
@@ -236,6 +250,24 @@
             item.classList.add('active');
             content.style.maxHeight = content.scrollHeight + 'px';
         }
+    }
+
+    // Filter projects by work package
+    function filterProjects(workPackage) {
+        // Update active button
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // Filter project cards
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            const cardWP = card.querySelector('.project-wp').textContent;
+            if (workPackage === 'all' || cardWP.startsWith(workPackage)) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
     }
 
     // Map supervisor names to their team page modal IDs

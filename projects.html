@@ -50,8 +50,25 @@
         .supervisor-list li:has(a):hover { background: var(--primary); transform: translateY(-2px); }
         .supervisor-list li:has(a):hover a { color: var(--white) !important; }
         .modal-apply-btn { display: block; width: 100%; text-align: center; margin-top: 32px; }
+
+        /* Accordion styles */
+        .accordion-item { background: var(--white); border-radius: 16px; margin-bottom: 16px; overflow: hidden; border: 2px solid var(--border); transition: all 0.3s; }
+        .accordion-item.active { border-color: var(--primary); box-shadow: var(--shadow-lg); }
+        .accordion-header { display: flex; align-items: center; padding: 24px 28px; cursor: pointer; transition: background 0.2s; }
+        .accordion-header:hover { background: var(--bg-light); }
+        .accordion-number { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--accent); min-width: 60px; margin-right: 20px; }
+        .accordion-title-wrapper { flex: 1; }
+        .accordion-title { font-size: 22px; font-weight: 600; margin-bottom: 4px; color: var(--text-dark); }
+        .accordion-subtitle { font-size: 15px; color: var(--text-medium); }
+        .accordion-icon { font-size: 24px; color: var(--primary); transition: transform 0.3s; }
+        .accordion-item.active .accordion-icon { transform: rotate(180deg); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-content-inner { padding: 0 28px 28px 108px; }
+        .accordion-content p { font-size: 15px; color: var(--text-medium); line-height: 1.7; }
+
         @media (max-width: 1024px) {
             .projects-grid { grid-template-columns: 1fr; }
+            .accordion-content-inner { padding-left: 28px; }
         }
     </style>
 </head>
@@ -79,14 +96,75 @@
 
     <section class="research" id="research" style="background: var(--bg-light); padding: 80px 0 40px;">
         <div class="container">
-            <div class="section-header" style="max-width: 100%; margin: 0 0 60px;">
+            <div class="section-header" style="max-width: 100%; margin: 0 0 40px;">
                 <h2 style="font-size: 42px; margin-bottom: 16px; text-align: left;">EDICT Work Packages</h2>
                 <p style="font-size: 18px; color: var(--text-medium); text-align: left;">Four interconnected work packages driving systemic change in clinical trial inclusivity. Each work package brings together a cluster of doctoral research projects united by a shared research theme.</p>
-            <div class="research-grid">
-                <div class="research-card"><div class="research-card-number">01</div><h3>Measurement & Metrics</h3><p>Developing standardised approaches to measure and report EDI in clinical trials.</p></div>
-                <div class="research-card"><div class="research-card-number">02</div><h3>Innovative Methodologies</h3><p>Creating new methods for trial design that enhance representation.</p></div>
-                <div class="research-card"><div class="research-card-number">03</div><h3>Implementation Tools</h3><p>Building practical resources including training modules and ethical frameworks.</p></div>
-                <div class="research-card"><div class="research-card-number">04</div><h3>Systemic Change</h3><p>Driving lasting change through stakeholder engagement and patient partnership.</p></div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-number">01</div>
+                        <div class="accordion-title-wrapper">
+                            <div class="accordion-title">Measurement & Metrics</div>
+                            <div class="accordion-subtitle">Developing standardised approaches to measure and report EDI in clinical trials.</div>
+                        </div>
+                        <div class="accordion-icon">▼</div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>wP1: Develops and validates standardised metrics and assessment tools for equity, diversity, and inclusion in clinical trials. Through systematic evaluation of current practices, this work package establishes evidence-based approaches to measuring trial inclusivity, including frameworks for assessing eligibility criteria and a core outcome set for EDI reporting.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-number">02</div>
+                        <div class="accordion-title-wrapper">
+                            <div class="accordion-title">Innovative Methodologies</div>
+                            <div class="accordion-subtitle">Creating new methods for trial design that enhance representation.</div>
+                        </div>
+                        <div class="accordion-icon">▼</div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>WP2: Creates innovative approaches to enhance trial inclusivity by addressing cultural, linguistic, and systemic barriers to participation. This includes a systematic framework for addressing methodological barriers to inclusion, AI-driven recruitment monitoring, culturally appropriate strategies for biobank engagement, and frameworks for diverse patient advisory groups.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-number">03</div>
+                        <div class="accordion-title-wrapper">
+                            <div class="accordion-title">Implementation Tools</div>
+                            <div class="accordion-subtitle">Building practical resources including training modules and ethical frameworks.</div>
+                        </div>
+                        <div class="accordion-icon">▼</div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>WP3: Transforms EDI principles into practical, evidence-based resources for the clinical trials community. This work package delivers statistical methodologies for inclusive trial design, a toolbox of best practices, ethical guidance frameworks, training programmes for trial personnel, and strategies for culturally responsive dissemination of findings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-number">04</div>
+                        <div class="accordion-title-wrapper">
+                            <div class="accordion-title">Systemic Change</div>
+                            <div class="accordion-subtitle">Driving lasting change through stakeholder engagement and patient partnership.</div>
+                        </div>
+                        <div class="accordion-icon">▼</div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>WP4: Advances sustainable approaches for embedding EDI into clinical research infrastructure. This includes investigating EDI in patient and public involvement initiatives, analysing stakeholder perspectives to inform policy, and developing practical frameworks for translation and interpretation services throughout the trial lifecycle.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -138,6 +216,25 @@
     <div id="modals-container"></div>
 
     <script>
+    // Accordion functionality
+    function toggleAccordion(header) {
+        const item = header.parentElement;
+        const content = item.querySelector('.accordion-content');
+        const isActive = item.classList.contains('active');
+
+        // Close all accordion items
+        document.querySelectorAll('.accordion-item').forEach(accordionItem => {
+            accordionItem.classList.remove('active');
+            accordionItem.querySelector('.accordion-content').style.maxHeight = null;
+        });
+
+        // Open clicked item if it wasn't already open
+        if (!isActive) {
+            item.classList.add('active');
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
+    }
+
     // Map supervisor names to their team page modal IDs
     const supervisorModalMap = {
         "Dr Eimear Morrissey": "modal1",

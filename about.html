@@ -61,12 +61,12 @@
                         <button class="carousel-btn prev" onclick="moveCarousel('beneficiaries', -1)" aria-label="Previous">‹</button>
                         <div class="partners-carousel" id="beneficiaries-carousel">
                             <div class="carousel-track" id="beneficiaries-track">
-                                <div class="partner-card-large"><div class="partner-name"><a href="https://www.universityofgalway.ie/" target="_blank" rel="noopener noreferrer">University of Galway</a></div><div class="partner-country">Ireland (Coordinator)</div></div>
-                                <div class="partner-card-large"><div class="partner-name"><a href="https://www.abdn.ac.uk/" target="_blank" rel="noopener noreferrer">University of Aberdeen</a></div><div class="partner-country">United Kingdom</div></div>
-                                <div class="partner-card-large"><div class="partner-name"><a href="https://www.umcutrecht.nl/en" target="_blank" rel="noopener noreferrer">UMC Utrecht</a></div><div class="partner-country">Netherlands</div></div>
-                                <div class="partner-card-large"><div class="partner-name"><a href="https://www.idipaz.es/" target="_blank" rel="noopener noreferrer">La Paz University Hospital Health Research Institute</a></div><div class="partner-country">Spain</div></div>
-                                <div class="partner-card-large"><div class="partner-name"><a href="https://www.unicath.hr/erasmus/about-hks" target="_blank" rel="noopener noreferrer">Catholic University of Croatia</a></div><div class="partner-country">Croatia</div></div>
-                                <div class="partner-card-large"><div class="partner-name"><a href="https://u-paris.fr/" target="_blank" rel="noopener noreferrer">Université Paris Cité</a></div><div class="partner-country">France</div></div>
+                                <a href="https://www.universityofgalway.ie/" target="_blank" rel="noopener noreferrer" class="partner-card-large"><div class="partner-name">University of Galway</div><div class="partner-country">Ireland (Coordinator)</div></a>
+                                <a href="https://www.abdn.ac.uk/" target="_blank" rel="noopener noreferrer" class="partner-card-large"><div class="partner-name">University of Aberdeen</div><div class="partner-country">United Kingdom</div></a>
+                                <a href="https://www.umcutrecht.nl/en" target="_blank" rel="noopener noreferrer" class="partner-card-large"><div class="partner-name">UMC Utrecht</div><div class="partner-country">Netherlands</div></a>
+                                <a href="https://www.idipaz.es/" target="_blank" rel="noopener noreferrer" class="partner-card-large"><div class="partner-name">La Paz University Hospital Health Research Institute</div><div class="partner-country">Spain</div></a>
+                                <a href="https://www.unicath.hr/erasmus/about-hks" target="_blank" rel="noopener noreferrer" class="partner-card-large"><div class="partner-name">Catholic University of Croatia</div><div class="partner-country">Croatia</div></a>
+                                <a href="https://u-paris.fr/" target="_blank" rel="noopener noreferrer" class="partner-card-large"><div class="partner-name">Université Paris Cité</div><div class="partner-country">France</div></a>
                             </div>
                         </div>
                         <button class="carousel-btn next" onclick="moveCarousel('beneficiaries', 1)" aria-label="Next">›</button>
@@ -138,6 +138,16 @@
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .partner-card-large:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
         }
 
         .partner-card-large .partner-name {
@@ -145,22 +155,21 @@
             font-size: 18px;
             margin-bottom: 8px;
             color: var(--text-dark);
-        }
-
-        .partner-card-large .partner-name a {
-            color: var(--text-dark);
-            text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        .partner-card-large .partner-name a:hover {
-            color: var(--primary);
-            text-decoration: underline;
+        .partner-card-large:hover .partner-name {
+            color: var(--white);
         }
 
         .partner-card-large .partner-country {
             font-size: 15px;
             color: var(--text-medium);
+            transition: color 0.3s ease;
+        }
+
+        .partner-card-large:hover .partner-country {
+            color: var(--white);
         }
 
         .carousel-btn {

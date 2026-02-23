@@ -132,7 +132,7 @@ const projects = [
     {
         id: 11, wp: "WP3 - Implementation", location: "Utrecht, Netherlands",
         title: "Ethical Frameworks for EDI in Clinical Trials",
-        supervisors: ["Dr. Rieke van der Graaf (UMC Utrecht)", "Dr. Sanne Peters (UMC Utrecht)"],
+        supervisors: ["Prof. Rieke van der Graaf (UMC Utrecht)", "Dr. Sanne Peters (UMC Utrecht)"],
         summary: "Developing action-guiding ethical principles to enable trialists and stakeholders to address challenges when increasing EDI in trials, including conceptual analysis of fairness and inclusion.",
         background: "While EDI principles are recognized in policy, there is a lack of actionable guidance. Key ethical questions remain: How should protection of vulnerable populations be weighed against promoting equal access? What do fairness and inclusion require in trials?",
         objectives: ["Assess and optimise ethical understanding of fairness and inclusion in research.", "Identify and evaluate ethical aspects of EDI throughout trial processes.", "Develop action-guiding ethical principles and policies."],

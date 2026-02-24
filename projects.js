@@ -256,6 +256,7 @@ function openModal(id) {
             <div class="modal-section">
                 <h3>Location</h3>
                 <p>📍 ${p.location}</p>
+                <p>${p.secondments.find(s => s.startsWith('Host:'))}</p>
             </div>
             <div class="modal-section">
                 <h3>Background</h3>
@@ -271,7 +272,7 @@ function openModal(id) {
             </div>
             <div class="modal-section">
                 <h3>Secondments</h3>
-                <ul>${p.secondments.map(s => `<li>${s}</li>`).join('')}</ul>
+                <ul>${p.secondments.filter(s => !s.startsWith('Host:')).map(s => `<li>${s}</li>`).join('')}</ul>
             </div>
             <div class="modal-section">
                 <h3>Eligibility</h3>

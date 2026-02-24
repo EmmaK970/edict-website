@@ -20,7 +20,7 @@ const projects = [
         background: "Randomized controlled trials often fail to represent underserved populations. Demographic characteristics are captured inconsistently, and psychosocial characteristics—health literacy, treatment preferences, financial constraints—are rarely measured. This creates gaps in understanding whether underserved populations respond differently to treatments.",
         objectives: ["Characterize how trials measure demographic and psychosocial patient characteristics.", "Identify and appraise measurement instruments for key characteristics.", "Describe how psychosocial characteristics distribute across underserved groups; explore associations with treatment engagement."],
         studies: ["<strong>Study 1:</strong> Systematic scoping review of case report forms from the CSDR database.", "<strong>Study 2:</strong> Clinimetric measure appraisal for priority characteristics.", "<strong>Study 3:</strong> Measure validation using the ComPaRe e-cohort."],
-        secondments: ["Two secondment placements in leading research institutions and industry partners"],
+        secondments: ["Host: Université Paris Cité, France", "Planned Secondments*: ECRIN, France (M12-16) and Department of Epidemiology & Global Health at UMC Utrecht (M22-26).", "*Please note that the secondment placements outlined below are planned in collaboration with industry partners and may be subject to change over the course of the project."],
         degree: "Master's in public health, epidemiology, psychology, or related field.",
         academic: "Quantitative research methods; measurement science training; good English.",
         mobility: "Must not have resided in France for more than 12 months in the 36 months prior to recruitment."

@@ -354,8 +354,7 @@
     const projectsContainer = document.getElementById('projects-container');
     const modalsContainer = document.getElementById('modals-container');
 
-    projects.forEach(p => {
-        projectsContainer.insertAdjacentHTML('beforeend', `
+    const cardsHTML = projects.map(p => `
             <div class="project-card" onclick="openModal('project${p.num}')">
                 <div class="project-card-header">
                     <div class="project-number">${p.num}</div>
@@ -370,9 +369,10 @@
                 <div class="project-card-footer">
                     <span class="view-details">View full details →</span>
                 </div>
-            </div>`);
+            </div>`).join('');
+    projectsContainer.innerHTML = cardsHTML;
 
-        modalsContainer.insertAdjacentHTML('beforeend', `
+    const modalsHTML = projects.map(p => `
             <div class="modal-overlay" id="project${p.num}-modal">
                 <div class="modal">
                     <div class="modal-header">
@@ -421,8 +421,8 @@
                         <a href="apply.html" class="btn btn-primary modal-apply-btn">Apply for this PhD Position</a>
                     </div>
                 </div>
-            </div>`);
-    });
+            </div>`).join('');
+    modalsContainer.innerHTML = modalsHTML;
 
     function openModal(id) {
         document.getElementById(id + '-modal').classList.add('active');

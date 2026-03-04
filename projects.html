@@ -353,7 +353,7 @@
     const modalsContainer = document.getElementById('modals-container');
 
     projects.forEach(p => {
-        projectsContainer.innerHTML += `
+        projectsContainer.insertAdjacentHTML('beforeend', `
             <div class="project-card" onclick="openModal('project${p.num}')">
                 <div class="project-card-header">
                     <div class="project-number">${p.num}</div>
@@ -370,7 +370,7 @@
                 </div>
             </div>`;
 
-        modalsContainer.innerHTML += `
+        modalsContainer.insertAdjacentHTML('beforeend', `
             <div class="modal-overlay" id="project${p.num}-modal">
                 <div class="modal">
                     <div class="modal-header">

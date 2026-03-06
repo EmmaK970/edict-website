@@ -171,7 +171,7 @@ const projects = [
     {
         id: 14, wp: "WP4 - Systemic Change", location: "Basel, Switzerland",
         title: "Interactions Between PPIE and EDI",
-        supervisors: ["Prof. Matthias Briel (University of Basel)", "Dr. Benjamin Speich (University of Basel)"],
+        supervisors: ["Prof. Matthias Briel (University of Basel)", "Dr. Stuart McLennan (University of Basel)"],
         summary: "Investigating how patient and public involvement and engagement (PPIE) initiatives consider EDI and developing guidance for effective EDI implementation through PPIE.",
         background: "Patient and public involvement and engagement (PPIE) in clinical trials is already well established. PPIE initiatives typically aim to strengthen patient-relevance in trials, which should include EDI principles. How PPIE could promote EDI remains unclear.",
         objectives: ["Clarify attitudes, current practice, and future plans of PPIE initiatives to consider EDI.", "Identify barriers and facilitators for EDI promotion through PPIE.", "Clarify if and how EDI principles could strengthen PPIE.", "Develop guidance for academia and industry."],

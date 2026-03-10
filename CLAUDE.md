@@ -1,4 +1,5 @@
-# Development Instructions
+## Git Workflow
 
-- Always work on the `main` branch directly. Never create feature branches.
-- Always commit and push to `origin main` after making changes.
+- Always work directly on the main branch
+- Never create feature branches or pull requests
+- After every change, stage all files, commit with a clear message, and push directly to origin main

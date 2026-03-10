@@ -1,5 +1,1 @@
-## Git Workflow
-
-- Always work directly on the main branch
-- Never create feature branches or pull requests
-- After every change, stage all files, commit with a clear message, and push directly to origin main
+IMPORTANT: Never create new branches. Always commit and push directly to main. Do not open pull requests. If you are about to create a branch, stop and push to main instead.

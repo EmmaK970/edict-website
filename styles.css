@@ -146,8 +146,8 @@ footer { background: var(--primary); color: var(--white); padding: 60px 0 30px; 
 .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; color: rgba(255, 255, 255, 0.4); font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
 /* Apply Page */
-.applications-closed-banner { background-color: #96285F; color: #ffffff; text-align: center; padding: 16px 24px; font-size: 16px; font-weight: 600; }
-.apply-hero { min-height: 50vh; padding: 160px 0 80px; background: var(--primary); display: flex; align-items: center; }
+.applications-closed-banner { background-color: #96285F; color: #ffffff; text-align: center; padding: 16px 24px; font-size: 16px; font-weight: 600; margin-top: 132px; position: sticky; top: 132px; z-index: 999; }
+.apply-hero { min-height: 50vh; padding: 60px 0 80px; background: var(--primary); display: flex; align-items: center; }
 .apply-hero .container { width: 100%; }
 .apply-hero h1 { font-size: 48px; margin-bottom: 16px; color: var(--white); }
 .apply-hero p { font-size: 20px; color: rgba(255,255,255,0.9); max-width: 700px; }

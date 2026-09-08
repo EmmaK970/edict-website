@@ -80,7 +80,7 @@ const projects = [
     {
         id: 7, wp: "WP2 - Methodologies", location: "Madrid, Spain",
         title: "Enhancing EDI in Informed Consent for Biological Samples and Data",
-        supervisors: ["Dr. Alberto Borobia (La Paz University Hospital)", "Dr. Irene García García (La Paz University Hospital)"],
+        supervisors: ["Dr. Alberto Borobia (La Paz University Hospital)", "Dr. Irene García-García (La Paz University Hospital)"],
         summary: "Examining how participants understand information about biological samples and data use, analysing how comprehension varies across sociodemographic groups.",
         background: "Patient information sheets often provide vague or incomplete details about biological samples and data use, particularly disadvantaging underrepresented groups with lower health literacy, linguistic minorities, or socioeconomically disadvantaged participants.",
         objectives: ["Review regulations and guidance on biological samples and data use.", "Analyse patient information sheets for compliance and clarity.", "Explore participant perceptions across sociodemographic groups.", "Investigate decision-making factors for optional consent.", "Formulate recommendations for transparency and cultural competence."],

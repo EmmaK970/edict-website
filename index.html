@@ -80,6 +80,10 @@
         .event-highlights { list-style: none; display: grid; gap: 12px; margin-top: 24px; }
         .event-highlights li { position: relative; padding-left: 24px; color: var(--text-medium); font-size: 16px; }
         .event-highlights li::before { content: '•'; position: absolute; left: 0; top: -2px; color: var(--primary); font-size: 22px; font-weight: bold; }
+        .event-gallery { display: grid; grid-template-columns: 1fr 2.25fr; gap: 24px; margin-top: 40px; align-items: start; }
+        .event-gallery figure { margin: 0; }
+        .event-gallery img { width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--shadow-lg); }
+        .event-gallery figcaption { font-size: 14px; color: var(--text-light); margin-top: 10px; text-align: center; }
         .research { background: var(--bg-light); }
         .research-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
         .research-card { background: var(--white); padding: 32px; border-radius: 16px; box-shadow: var(--shadow); transition: all 0.3s; }
@@ -124,6 +128,7 @@
             .about-grid { grid-template-columns: 1fr; }
             .about-image { height: 300px; order: -1; }
             .event-card { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+            .event-gallery { grid-template-columns: 1fr; }
             .research-grid { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
@@ -938,6 +943,16 @@
                         <li>Foundational training on equity, diversity and inclusion in clinical trials</li>
                     </ul>
                 </div>
+            </div>
+            <div class="event-gallery">
+                <figure>
+                    <img src="kickoff-group-photo.jpg" alt="Group photo of EDICT doctoral candidates and supervisors on a staircase at the Kick-Off Training Event" loading="lazy">
+                    <figcaption>EDICT doctoral candidates and supervisors</figcaption>
+                </figure>
+                <figure>
+                    <img src="kickoff-doctoral-candidates.jpg" alt="EDICT doctoral candidates at the Kick-Off Training Event" loading="lazy">
+                    <figcaption>EDICT doctoral candidates</figcaption>
+                </figure>
             </div>
         </div>
     </section>

@@ -84,6 +84,13 @@
         .event-gallery figure { margin: 0; }
         .event-gallery img { width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--shadow-lg); }
         .event-gallery figcaption { font-size: 14px; color: var(--text-light); margin-top: 10px; text-align: center; }
+        .event-gallery img { cursor: zoom-in; transition: transform 0.2s, box-shadow 0.2s; }
+        .event-gallery img:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15); }
+        .lightbox { position: fixed; inset: 0; background: rgba(10,20,30,0.92); display: none; align-items: center; justify-content: center; flex-direction: column; z-index: 2000; padding: 24px; cursor: zoom-out; }
+        .lightbox.open { display: flex; }
+        .lightbox img { max-width: 100%; max-height: calc(100vh - 100px); border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .lightbox-caption { color: rgba(255,255,255,0.85); font-size: 15px; margin-top: 14px; text-align: center; }
+        .lightbox-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--white); font-size: 40px; line-height: 1; cursor: pointer; padding: 8px; }
         .research { background: var(--bg-light); }
         .research-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
         .research-card { background: var(--white); padding: 32px; border-radius: 16px; box-shadow: var(--shadow); transition: all 0.3s; }
@@ -1118,6 +1125,35 @@
     <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
     <script>
         fetch("https://assets.mailerlite.com/jsonp/1988457/forms/174042978997765341/takel")
+    </script>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img src="" alt="">
+        <div class="lightbox-caption"></div>
+    </div>
+    <script>
+    // Click-to-enlarge for event photos
+    (function() {
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = lightbox.querySelector('img');
+        const lbCaption = lightbox.querySelector('.lightbox-caption');
+        function close() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+        document.querySelectorAll('.event-gallery img').forEach(function(img) {
+            img.setAttribute('tabindex', '0');
+            function open() {
+                lbImg.src = img.src;
+                lbImg.alt = img.alt;
+                const cap = img.closest('figure').querySelector('figcaption');
+                lbCaption.textContent = cap ? cap.textContent : '';
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            img.addEventListener('click', open);
+            img.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+        });
+        lightbox.addEventListener('click', close);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+    })();
     </script>
 </body>
 </html>

@@ -28,6 +28,18 @@
         .event-gallery figcaption { font-size: 14px; color: var(--text-light); margin-top: 10px; text-align: center; }
         .event-gallery img { cursor: zoom-in; transition: transform 0.2s, box-shadow 0.2s; }
         .event-gallery img:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15); }
+        .event-album { margin-top: 64px; }
+        .event-album h3 { font-size: 32px; color: var(--primary); margin-bottom: 8px; }
+        .event-album > p { color: var(--text-medium); font-size: 16px; margin-bottom: 24px; }
+        .event-album-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .event-album-grid figure { margin: 0; overflow: hidden; border-radius: 12px; box-shadow: var(--shadow-lg); aspect-ratio: 3 / 2; }
+        .event-album-grid img { width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in; transition: transform 0.3s; }
+        .event-album-grid img:hover, .event-album-grid img:focus { transform: scale(1.04); }
+        .event-album-grid figcaption { display: none; }
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.12); border: none; color: var(--white); font-size: 36px; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; line-height: 1; }
+        .lightbox-nav:hover { background: rgba(255,255,255,0.25); }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
         .lightbox { position: fixed; inset: 0; background: rgba(10,20,30,0.92); display: none; align-items: center; justify-content: center; flex-direction: column; z-index: 2000; padding: 24px; cursor: zoom-out; }
         .lightbox.open { display: flex; }
         .lightbox img { max-width: 100%; max-height: calc(100vh - 100px); border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
@@ -36,6 +48,10 @@
         @media (max-width: 768px) {
             .event-card { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
             .event-gallery { grid-template-columns: 1fr; }
+            .event-album-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .lightbox-nav { width: 44px; height: 44px; font-size: 28px; }
+            .lightbox-prev { left: 8px; }
+            .lightbox-next { right: 8px; }
         }
     </style>
 </head>
@@ -93,6 +109,32 @@
                     <figcaption>EDICT doctoral candidates</figcaption>
                 </figure>
             </div>
+            <div class="event-album">
+                <h3>Photo Album</h3>
+                <p>Highlights from the EDICT Kick-Off &amp; First Training Event. Click any photo to enlarge it.</p>
+                <div class="event-album-grid">
+                    <figure>
+                        <img src="kickoff-album-1.jpg" alt="Three EDICT doctoral candidates smiling together at the Kick-Off Training Event" loading="lazy">
+                        <figcaption>EDICT doctoral candidates at the Kick-Off Training Event</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="kickoff-album-2.jpg" alt="EDICT members chatting over coffee during a break" loading="lazy">
+                        <figcaption>Networking during a coffee break</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="kickoff-album-3.jpg" alt="A participant speaking into a microphone during a group discussion" loading="lazy">
+                        <figcaption>Group discussion during a training session</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="kickoff-album-4.jpg" alt="Prof Shaun Treweek presenting at a podium" loading="lazy">
+                        <figcaption>Prof Shaun Treweek, University of Aberdeen, presenting</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="kickoff-album-5.jpg" alt="A presenter at a podium in front of a slide introducing the 16 EDICT doctoral candidates" loading="lazy">
+                        <figcaption>Introducing the 16 EDICT doctoral candidates</figcaption>
+                    </figure>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -134,31 +176,44 @@
     </footer>
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
         <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Previous photo">&#8249;</button>
         <img src="" alt="">
         <div class="lightbox-caption"></div>
+        <button class="lightbox-nav lightbox-next" aria-label="Next photo">&#8250;</button>
     </div>
     <script>
-    // Click-to-enlarge for event photos
+    // Click-to-enlarge for event photos, with previous/next navigation
     (function() {
         const lightbox = document.getElementById('lightbox');
         const lbImg = lightbox.querySelector('img');
         const lbCaption = lightbox.querySelector('.lightbox-caption');
+        const images = Array.from(document.querySelectorAll('.event-gallery img, .event-album-grid img'));
+        let current = 0;
+        function show(index) {
+            current = (index + images.length) % images.length;
+            const img = images[current];
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            const cap = img.closest('figure').querySelector('figcaption');
+            lbCaption.textContent = (cap ? cap.textContent : '') + '  (' + (current + 1) + ' / ' + images.length + ')';
+        }
+        function open(index) { show(index); lightbox.classList.add('open'); document.body.style.overflow = 'hidden'; }
         function close() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
-        document.querySelectorAll('.event-gallery img').forEach(function(img) {
+        images.forEach(function(img, index) {
             img.setAttribute('tabindex', '0');
-            function open() {
-                lbImg.src = img.src;
-                lbImg.alt = img.alt;
-                const cap = img.closest('figure').querySelector('figcaption');
-                lbCaption.textContent = cap ? cap.textContent : '';
-                lightbox.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            }
-            img.addEventListener('click', open);
-            img.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+            img.addEventListener('click', function() { open(index); });
+            img.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(index); } });
         });
+        lightbox.querySelector('.lightbox-prev').addEventListener('click', function(e) { e.stopPropagation(); show(current - 1); });
+        lightbox.querySelector('.lightbox-next').addEventListener('click', function(e) { e.stopPropagation(); show(current + 1); });
+        lbImg.addEventListener('click', function(e) { e.stopPropagation(); show(current + 1); });
         lightbox.addEventListener('click', close);
-        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape') close();
+            if (e.key === 'ArrowLeft') show(current - 1);
+            if (e.key === 'ArrowRight') show(current + 1);
+        });
     })();
     </script>
 </body>

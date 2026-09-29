@@ -7,16 +7,18 @@
     <meta name="description" content="Events and training from the EDICT Marie Skłodowska-Curie Doctoral Network, including the EDICT Kick-Off Training Event, September 2026.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         .events { background: var(--bg-cream); padding: 100px 0; }
         .event-card { background: var(--white); border-radius: 24px; box-shadow: var(--shadow-lg); padding: 48px; display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: start; border-top: 6px solid var(--accent); }
         .event-date { background: var(--primary); color: var(--white); border-radius: 16px; padding: 32px 24px; text-align: center; }
-        .event-date-month { font-size: 15px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; }
-        .event-date-year { font-family: 'DM Serif Display', serif; font-size: 48px; line-height: 1.1; }
+        .event-date-days { font-family: 'Montserrat', 'Gotham', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1; }
+        .event-date-month { font-family: 'Montserrat', 'Gotham', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; opacity: 0.9; }
+        .event-date-location { font-size: 15px; font-weight: 500; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.3); opacity: 0.9; }
         .event-tag { display: inline-block; background: rgba(150,40,95,0.1); color: var(--accent); font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
-        .event-details h3 { font-size: 32px; color: var(--primary); margin-bottom: 16px; }
+        .event-details h3, .event-album h3 { font-family: 'Montserrat', 'Gotham', sans-serif; font-weight: 700; letter-spacing: -0.5px; }
+        .event-details h3 { font-size: 30px; color: var(--primary); margin-bottom: 16px; }
         .event-details p { color: var(--text-medium); font-size: 17px; margin-bottom: 16px; }
         .event-highlights { list-style: none; display: grid; gap: 12px; margin-top: 24px; }
         .event-highlights li { position: relative; padding-left: 24px; color: var(--text-medium); font-size: 16px; }
@@ -83,8 +85,9 @@
         <div class="container">
             <div class="event-card">
                 <div class="event-date">
-                    <div class="event-date-month">September</div>
-                    <div class="event-date-year">2026</div>
+                    <div class="event-date-days">23rd&ndash;25th</div>
+                    <div class="event-date-month">September 2026</div>
+                    <div class="event-date-location">Galway</div>
                 </div>
                 <div class="event-details">
                     <span class="event-tag">Doctoral Candidate Training Event</span>

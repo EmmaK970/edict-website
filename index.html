@@ -69,28 +69,6 @@
         .about-feature p { font-size: 15px; margin: 0; }
         .about-image { border-radius: 24px; height: 500px; overflow: hidden; }
         .about-image img { width: 100%; height: 100%; object-fit: cover; }
-        .events { background: var(--bg-cream); padding: 100px 0; }
-        .event-card { background: var(--white); border-radius: 24px; box-shadow: var(--shadow-lg); padding: 48px; display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: start; border-top: 6px solid var(--accent); }
-        .event-date { background: var(--primary); color: var(--white); border-radius: 16px; padding: 32px 24px; text-align: center; }
-        .event-date-month { font-size: 15px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; }
-        .event-date-year { font-family: 'DM Serif Display', serif; font-size: 48px; line-height: 1.1; }
-        .event-tag { display: inline-block; background: rgba(150,40,95,0.1); color: var(--accent); font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
-        .event-details h3 { font-size: 32px; color: var(--primary); margin-bottom: 16px; }
-        .event-details p { color: var(--text-medium); font-size: 17px; margin-bottom: 16px; }
-        .event-highlights { list-style: none; display: grid; gap: 12px; margin-top: 24px; }
-        .event-highlights li { position: relative; padding-left: 24px; color: var(--text-medium); font-size: 16px; }
-        .event-highlights li::before { content: '•'; position: absolute; left: 0; top: -2px; color: var(--primary); font-size: 22px; font-weight: bold; }
-        .event-gallery { display: grid; grid-template-columns: 1fr 2.25fr; gap: 24px; margin-top: 40px; align-items: start; }
-        .event-gallery figure { margin: 0; }
-        .event-gallery img { width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--shadow-lg); }
-        .event-gallery figcaption { font-size: 14px; color: var(--text-light); margin-top: 10px; text-align: center; }
-        .event-gallery img { cursor: zoom-in; transition: transform 0.2s, box-shadow 0.2s; }
-        .event-gallery img:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15); }
-        .lightbox { position: fixed; inset: 0; background: rgba(10,20,30,0.92); display: none; align-items: center; justify-content: center; flex-direction: column; z-index: 2000; padding: 24px; cursor: zoom-out; }
-        .lightbox.open { display: flex; }
-        .lightbox img { max-width: 100%; max-height: calc(100vh - 100px); border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .lightbox-caption { color: rgba(255,255,255,0.85); font-size: 15px; margin-top: 14px; text-align: center; }
-        .lightbox-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--white); font-size: 40px; line-height: 1; cursor: pointer; padding: 8px; }
         .research { background: var(--bg-light); }
         .research-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
         .research-card { background: var(--white); padding: 32px; border-radius: 16px; box-shadow: var(--shadow); transition: all 0.3s; }
@@ -134,8 +112,6 @@
             .hero-stats { grid-template-columns: repeat(2, 1fr); }
             .about-grid { grid-template-columns: 1fr; }
             .about-image { height: 300px; order: -1; }
-            .event-card { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
-            .event-gallery { grid-template-columns: 1fr; }
             .research-grid { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
@@ -872,7 +848,7 @@
                 <li><a href="projects.html">PhD Projects</a></li>
                 <li><a href="team.html">Meet the Team</a></li>
                 <li><a href="candidates.html">Doctoral Candidates</a></li>
-                <li><a href="#kickoff">Events</a></li>
+                <li><a href="events.html">Events</a></li>
                 <li><a href="#newsletter">Contact</a></li>
 
             </ul>
@@ -924,42 +900,6 @@
                     </div>
                 </div>
                 <div class="about-image"><img src="clinical trial.jpg" alt="Clinical Trials"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="events" id="kickoff">
-        <div class="container">
-            <div class="section-header">
-                <h2>EDICT Kick-Off Training Event September 2026</h2>
-                <p>Bringing our doctoral candidates and supervisors together for the first EDICT training event.</p>
-            </div>
-            <div class="event-card">
-                <div class="event-date">
-                    <div class="event-date-month">September</div>
-                    <div class="event-date-year">2026</div>
-                </div>
-                <div class="event-details">
-                    <span class="event-tag">Doctoral Candidate Training Event</span>
-                    <h3>EDICT Kick-Off & First Training Event</h3>
-                    <p>The EDICT Kick-Off Training Event marks the official start of our training programme, bringing together our doctoral candidates with supervisors from across our institutions for the first time.</p>
-                    <p>The event provides an opportunity for candidates to meet one another and begin building the skills and collaborations that will shape their research on equity, diversity and inclusion in clinical trials.</p>
-                    <ul class="event-highlights">
-                        <li>Welcome and introduction to the EDICT Doctoral Network</li>
-                        <li>Training sessions on Standing Up for Science and Patient and Public Involvement (PPIE) in clinical trials </li>
-                        <li>Foundational training on equity, diversity and inclusion in clinical trials</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="event-gallery">
-                <figure>
-                    <img src="kickoff-group-photo.jpg" alt="Group photo of EDICT doctoral candidates and supervisors on a staircase at the Kick-Off Training Event" loading="lazy">
-                    <figcaption>EDICT doctoral candidates and supervisors</figcaption>
-                </figure>
-                <figure>
-                    <img src="kickoff-doctoral-candidates.jpg" alt="EDICT doctoral candidates at the Kick-Off Training Event" loading="lazy">
-                    <figcaption>EDICT doctoral candidates</figcaption>
-                </figure>
             </div>
         </div>
     </section>
@@ -1125,35 +1065,6 @@
     <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
     <script>
         fetch("https://assets.mailerlite.com/jsonp/1988457/forms/174042978997765341/takel")
-    </script>
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
-        <button class="lightbox-close" aria-label="Close">&times;</button>
-        <img src="" alt="">
-        <div class="lightbox-caption"></div>
-    </div>
-    <script>
-    // Click-to-enlarge for event photos
-    (function() {
-        const lightbox = document.getElementById('lightbox');
-        const lbImg = lightbox.querySelector('img');
-        const lbCaption = lightbox.querySelector('.lightbox-caption');
-        function close() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
-        document.querySelectorAll('.event-gallery img').forEach(function(img) {
-            img.setAttribute('tabindex', '0');
-            function open() {
-                lbImg.src = img.src;
-                lbImg.alt = img.alt;
-                const cap = img.closest('figure').querySelector('figcaption');
-                lbCaption.textContent = cap ? cap.textContent : '';
-                lightbox.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            }
-            img.addEventListener('click', open);
-            img.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-        });
-        lightbox.addEventListener('click', close);
-        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
-    })();
     </script>
 </body>
 </html>

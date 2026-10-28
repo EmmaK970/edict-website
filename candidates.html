@@ -9,6 +9,134 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .supervisor-card {
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .supervisor-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        .supervisor-card img, .supervisor-card .placeholder-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 16px;
+        }
+        .supervisor-card .placeholder-image {
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--text-light);
+        }
+        .supervisor-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        .supervisor-card .role {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .supervisor-card .location {
+            font-size: 14px;
+            color: var(--text-medium);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            max-width: none;
+            max-height: none;
+            border-radius: 0;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 800px;
+            position: relative;
+        }
+        .modal-header {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--border);
+        }
+        .modal-header img, .modal-header .placeholder-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .modal-header .placeholder-image {
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--text-light);
+        }
+        .modal-info h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        .modal-info .role {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .modal-info .location {
+            font-size: 16px;
+            color: var(--text-medium);
+        }
+        .modal-bio {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        .close {
+            position: absolute;
+            right: 24px;
+            top: 24px;
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close:hover {
+            color: var(--primary);
+        }
+        .supervisors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -39,8 +167,39 @@
             <div style="text-align: center; max-width: 640px; margin: 40px auto; padding: 48px 24px; background: var(--bg-light); border-radius: 16px;">
                 <p style="font-size: 18px; color: var(--text-medium); line-height: 1.6;">We have now finished recruitment for the EDICT Doctoral Network. We look forward to introducing our Doctoral Candidates!</p>
             </div>
+
+            <div class="supervisors-grid">
+
+                <!-- Hasnat Sujon -->
+                <div class="supervisor-card" onclick="openModal('modal1')">
+                    <img src="hasnat-sujon.jpg" alt="Hasnat Sujon">
+                    <h3>Hasnat Sujon</h3>
+                    <p class="role">Doctoral Candidate – Project 13</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+
+            </div>
         </div>
     </section>
+
+    <!-- Modal 1 - Hasnat Sujon -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <div class="modal-header">
+                <img src="hasnat-sujon.jpg" alt="Hasnat Sujon">
+                <div class="modal-info">
+                    <h2>Hasnat Sujon</h2>
+                    <p class="role">Doctoral Candidate – Project 13</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                <p>Hasnat is working on developing a guideline for culturally appropriate dissemination of clinical trials (EDICT Project # 13), under the supervision of Dr. Sinéad Hynes and Dr. Eimear Morrissey at the University of Galway, Ireland.</p>
+                <p style="margin-top: 16px;">Hasnat is a medical doctor and a clinical trialist with ~10 years' experience leading the set-up, execution, and close-out of 10+ clinical trials (Phase II–III; vaccines, infectious disease) across multi-country settings, working with industry sponsors (Moderna, GSK) and academic investigators (NIH, WHO, Johns Hopkins). He completed an MSc in Clinical Trials from the London School of Hygiene and Tropical Medicine (Commonwealth Scholar) and an MPH (Epidemiology) from University College Dublin. He has published in leading peer-reviewed journals and has secured competitive research funding from NIH, Sida, and WHO.</p>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
@@ -78,5 +237,29 @@
             </div>
         </div>
     </footer>
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Open modal if URL has a hash (e.g., team.html#modal1)
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.substring(1); // Remove the # symbol
+            if (hash && document.getElementById(hash)) {
+                openModal(hash);
+            }
+        });
+    </script>
 </body>
 </html>

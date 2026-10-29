@@ -146,9 +146,10 @@ footer { background: var(--primary); color: var(--white); padding: 60px 0 30px; 
 .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; color: rgba(255, 255, 255, 0.4); font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
 /* Apply Page */
-.apply-hero { min-height: 50vh; padding: 60px 0 80px; background: var(--primary); display: flex; align-items: center; margin-top: 132px; }
+.apply-hero { padding: 48px 0; background: var(--primary); display: flex; align-items: center; margin-top: 132px; }
 .apply-hero .container { width: 100%; }
 .apply-hero h1 { font-size: 48px; margin-bottom: 16px; color: var(--white); }
+.apply-hero h1:last-child { margin-bottom: 0; }
 .apply-hero p { font-size: 20px; color: rgba(255,255,255,0.9); max-width: 700px; }
 .apply-content { padding: 60px 0; }
 .apply-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }

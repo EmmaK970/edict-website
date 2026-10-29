@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhD Projects - EDICT Doctoral Network</title>
-    <meta name="description" content="16 fully-funded PhD positions in the EDICT Marie Skłodowska-Curie Doctoral Network transforming clinical trials research.">
+    <title>Doctoral Candidates and Projects - EDICT Doctoral Network</title>
+    <meta name="description" content="Meet the doctoral candidates of the EDICT Marie Skłodowska-Curie Doctoral Network and explore the 16 PhD projects transforming equity, diversity and inclusion in clinical trials.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -49,7 +49,6 @@
         .supervisor-list li:has(a) { cursor: pointer; }
         .supervisor-list li:has(a):hover { background: var(--primary); transform: translateY(-2px); }
         .supervisor-list li:has(a):hover a { color: var(--white) !important; }
-        .modal-apply-btn { display: block; width: 100%; text-align: center; margin-top: 32px; }
 
         /* Accordion styles */
         .accordion-item { background: var(--white); border-radius: 16px; margin-bottom: 16px; overflow: hidden; border: 2px solid var(--border); transition: all 0.3s; }
@@ -77,6 +76,135 @@
             .projects-grid { grid-template-columns: 1fr; }
             .accordion-content-inner { padding-left: 28px; }
         }
+        /* Keep section headings clear of the sticky nav when linked to directly */
+        #candidates, #projects { scroll-margin-top: 150px; }
+        /* Doctoral candidate cards and bio pop-ups */
+        .candidate-card {
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .candidate-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        .candidate-card img, .candidate-card .placeholder-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 16px;
+        }
+        .candidate-card .placeholder-image {
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--text-light);
+        }
+        .candidate-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        .candidate-card .role {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .candidate-card .location {
+            font-size: 14px;
+            color: var(--text-medium);
+        }
+        .cand-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            max-width: none;
+            max-height: none;
+            border-radius: 0;
+        }
+        .cand-modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 800px;
+            position: relative;
+        }
+        .cand-modal-header {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--border);
+        }
+        .cand-modal-header img, .cand-modal-header .placeholder-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .cand-modal-header .placeholder-image {
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--text-light);
+        }
+        .cand-modal-info h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        .cand-modal-info .role {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .cand-modal-info .location {
+            font-size: 16px;
+            color: var(--text-medium);
+        }
+        .cand-modal-bio {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        .cand-close {
+            position: absolute;
+            right: 24px;
+            top: 24px;
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .cand-close:hover {
+            color: var(--primary);
+        }
+        .candidates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
@@ -86,9 +214,8 @@
             <ul class="nav-links">
                 <li><a href="index.html#top">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">PhD Projects</a></li>
+                <li><a href="projects.html">Doctoral Candidates and Projects</a></li>
                 <li><a href="team.html">Meet the Team</a></li>
-                <li><a href="candidates.html">Doctoral Candidates</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="index.html#newsletter">Contact</a></li>
 
@@ -98,9 +225,117 @@
 
 <section class="apply-hero">
     <div class="container">
-        <h1>PhD Projects</h1>
+        <h1>Doctoral Candidates and Projects</h1>
     </div>
 </section>
+
+    <section class="candidates" id="candidates" style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-header" style="max-width: 100%; margin: 0;">
+                <h2 style="font-size: 42px; margin-bottom: 16px; text-align: left;">Our Doctoral Candidates</h2>
+                <p style="font-size: 18px; color: var(--text-medium); text-align: left;">The researchers who will transform equity, diversity and inclusion in clinical trials across Europe. Click on any candidate to read their bio.</p>
+            </div>
+            <div class="candidates-grid">
+
+                <!-- Teena Thomas -->
+                <div class="candidate-card" onclick="openCandidate('candidate3')">
+                    <img src="teena-thomas.jpg" alt="Teena Thomas">
+                    <h3>Teena Thomas</h3>
+                    <p class="role">Doctoral Candidate – Project 1</p>
+                    <p class="location">📍 Catholic University of Croatia</p>
+                </div>
+
+                <!-- Ashley Boers -->
+                <div class="candidate-card" onclick="openCandidate('candidate12')">
+                    <img src="ashley-boers.jpg" alt="Ashley Boers">
+                    <h3>Ashley Boers</h3>
+                    <p class="role">Doctoral Candidate – Project 4</p>
+                    <p class="location">📍 University of Basel</p>
+                </div>
+
+                <!-- Anh Tran Nhat Phuong -->
+                <div class="candidate-card" onclick="openCandidate('candidate4')">
+                    <img src="anh-tran-nhat-phuong.jpg" alt="Anh Tran Nhat Phuong">
+                    <h3>Anh Tran Nhat Phuong</h3>
+                    <p class="role">Doctoral Candidate – Project 5</p>
+                    <p class="location">📍 Paris Cité University</p>
+                </div>
+
+                <!-- Betelehem Dagnaw Alemu -->
+                <div class="candidate-card" onclick="openCandidate('candidate5')">
+                    <img src="betelehem-dagnaw-alemu.jpg" alt="Betelehem Dagnaw Alemu">
+                    <h3>Betelehem Dagnaw Alemu</h3>
+                    <p class="role">Doctoral Candidate – Project 6</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+
+                <!-- Dolores Cviticanin -->
+                <div class="candidate-card" onclick="openCandidate('candidate10')">
+                    <img src="dolores-cviticanin.jpg" alt="Dolores Cviticanin">
+                    <h3>Dolores Cviticanin</h3>
+                    <p class="role">Doctoral Candidate – Project 8</p>
+                    <p class="location">📍 La Paz University Hospital</p>
+                </div>
+
+                <!-- Maeve Herlihy -->
+                <div class="candidate-card" onclick="openCandidate('candidate2')">
+                    <img src="maeve-herlihy.jpg" alt="Maeve Herlihy">
+                    <h3>Maeve Herlihy</h3>
+                    <p class="role">Doctoral Candidate – Project 10</p>
+                    <p class="location">📍 UMC Utrecht</p>
+                </div>
+
+                <!-- Jamie Ann Fuller -->
+                <div class="candidate-card" onclick="openCandidate('candidate7')">
+                    <img src="jamie-ann-fuller.jpg" alt="Jamie Ann Fuller">
+                    <h3>Jamie Ann Fuller</h3>
+                    <p class="role">Doctoral Candidate – Project 11</p>
+                    <p class="location">📍 UMC Utrecht</p>
+                </div>
+
+                <!-- Neveen Ahmed -->
+                <div class="candidate-card" onclick="openCandidate('candidate11')">
+                    <img src="neveen-ahmed.jpg" alt="Neveen Ahmed">
+                    <h3>Neveen Ahmed</h3>
+                    <p class="role">Doctoral Candidate – Project 12</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+
+                <!-- Hasnat Sujon -->
+                <div class="candidate-card" onclick="openCandidate('candidate1')">
+                    <img src="hasnat-sujon.jpg" alt="Hasnat Sujon">
+                    <h3>Hasnat Sujon</h3>
+                    <p class="role">Doctoral Candidate – Project 13</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+
+                <!-- David Arango -->
+                <div class="candidate-card" onclick="openCandidate('candidate6')">
+                    <img src="david-arango.jpg" alt="David Arango">
+                    <h3>David Arango</h3>
+                    <p class="role">Doctoral Candidate – Project 14</p>
+                    <p class="location">📍 University of Basel</p>
+                </div>
+
+                <!-- Emmanuella Achiaa Osei-Tutu -->
+                <div class="candidate-card" onclick="openCandidate('candidate9')">
+                    <img src="emmanuella-osei-tutu.jpg" alt="Emmanuella Achiaa Osei-Tutu">
+                    <h3>Emmanuella Achiaa Osei-Tutu</h3>
+                    <p class="role">Doctoral Candidate – Project 15</p>
+                    <p class="location">📍 Catholic University of Croatia</p>
+                </div>
+
+                <!-- Betty Matsezi Kalama -->
+                <div class="candidate-card" onclick="openCandidate('candidate8')">
+                    <img src="betty-matsezi-kalama.jpg" alt="Betty Matsezi Kalama">
+                    <h3>Betty Matsezi Kalama</h3>
+                    <p class="role">Doctoral Candidate – Project 16</p>
+                    <p class="location">📍 University of Aberdeen</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <section class="research" id="research" style="background: var(--bg-light); padding: 80px 0 40px;">
         <div class="container">
@@ -177,11 +412,11 @@
         </div>
     </section>
 
-<section class="phd-projects">
+<section class="phd-projects" id="projects">
     <div class="container">
         <div class="section-header" style="max-width: 100%; margin: 0 0 40px;">
-            <h2 style="font-size: 42px; margin-bottom: 16px; text-align: left;">PhD Positions</h2>
-            <p style="font-size: 18px; color: var(--text-medium); text-align: left;">Join our doctoral network and help transform equity, diversity and inclusion in clinical trials. Click on any project to view full details.</p>
+            <h2 style="font-size: 42px; margin-bottom: 16px; text-align: left;">PhD Projects</h2>
+            <p style="font-size: 18px; color: var(--text-medium); text-align: left;">The 16 doctoral research projects of the EDICT network. Click on any project to view full details.</p>
 
             <div class="filter-buttons">
                 <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
@@ -207,14 +442,14 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">PhD Projects</a></li>
+                        <li><a href="projects.html">Doctoral Candidates and Projects</a></li>
                         <li><a href="team.html">Meet the Team</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Doctoral Candidates</h4>
                     <ul>
-                        <li><a href="candidates.html">Meet Our Candidates</a></li>
+                        <li><a href="projects.html#candidates">Meet Our Candidates</a></li>
                         <li><a href="index.html#newsletter">Contact</a></li>
                     </ul>
                 </div>
@@ -231,6 +466,234 @@
             </div>
         </div>
     </footer>
+
+    <!-- Candidate pop-up 1 - Hasnat Sujon -->
+    <div id="candidate1" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate1')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="hasnat-sujon.jpg" alt="Hasnat Sujon">
+                <div class="cand-modal-info">
+                    <h2>Hasnat Sujon</h2>
+                    <p class="role">Doctoral Candidate – Project 13</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>Hasnat is working on developing a guideline for culturally appropriate dissemination of clinical trials (EDICT Project # 13), under the supervision of Dr. Sinéad Hynes and Dr. Eimear Morrissey at the University of Galway, Ireland.</p>
+                <p style="margin-top: 16px;">Hasnat is a medical doctor and a clinical trialist with ~10 years' experience leading the set-up, execution, and close-out of 10+ clinical trials (Phase II–III; vaccines, infectious disease) across multi-country settings, working with industry sponsors (Moderna, GSK) and academic investigators (NIH, WHO, Johns Hopkins). He completed an MSc in Clinical Trials from the London School of Hygiene and Tropical Medicine (Commonwealth Scholar) and an MPH (Epidemiology) from University College Dublin. He has published in leading peer-reviewed journals and has secured competitive research funding from NIH, Sida, and WHO.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 2 - Maeve Herlihy -->
+    <div id="candidate2" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate2')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="maeve-herlihy.jpg" alt="Maeve Herlihy">
+                <div class="cand-modal-info">
+                    <h2>Maeve Herlihy</h2>
+                    <p class="role">Doctoral Candidate – Project 10</p>
+                    <p class="location">📍 UMC Utrecht</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>Maeve holds a BSc in Public Health Sciences from University College Cork and an MSc in Epidemiology from the London School of Hygiene and Tropical Medicine. Her research experience spans both quantitative and qualitative methods. She previously worked at the HRB Clinical Research Facility at University College Cork, where her work focused on clinical trial design tools, reporting guidelines and pragmatic trial design principles. She was also part of the PRECIS-3 research team, a trial design tool aimed at helping trialists match design decisions to the intended purpose of a trial.</p>
+                <p style="margin-top: 16px;">Maeve will be working on Project 10, Methodological and Operational Tools for Enhancing EDI in Clinical Trials, as part of Work Package 3. Her research will focus on evaluating approaches to enhance equity, diversity and inclusion (EDI) in clinical trials and developing practical guidance to support their use.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 3 - Teena Thomas -->
+    <div id="candidate3" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate3')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="teena-thomas.jpg" alt="Teena Thomas">
+                <div class="cand-modal-info">
+                    <h2>Teena Thomas</h2>
+                    <p class="role">Doctoral Candidate – Project 1</p>
+                    <p class="location">📍 Catholic University of Croatia</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>Teena Thomas is the doctoral candidate on EDICT Project 1, based at the Catholic University of Croatia in Zagreb, under the mentorship of Prof. Livia Puljak and the supervision of Prof. Damir Sapunar. Her project, part of Work Package 1, examines how equity, diversity and inclusion are planned and realised across European clinical trials. Drawing on trial registries and publications from 1993 onwards, she will compare single- and multi-country trials and track how EDI practices have changed over time.</p>
+                <p style="margin-top: 16px;">Before joining EDICT, Teena worked as a Research Assistant at the Centre for Health Research Methodology, University of Galway, on the HRB-TMRN-funded QASSIST study (Qualitative Research Supporting Inclusive Trials). The study explores how qualitative research can inform the design and conduct of inclusive clinical trials. Earlier in her career, she spent two years in healthcare market research across the Asia-Pacific region. She holds a Master’s in Health Data Science, an MBA in Healthcare Management and a BSc in Microbiology-Biochemistry.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 4 - Anh Tran Nhat Phuong -->
+    <div id="candidate4" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate4')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="anh-tran-nhat-phuong.jpg" alt="Anh Tran Nhat Phuong">
+                <div class="cand-modal-info">
+                    <h2>Anh Tran Nhat Phuong</h2>
+                    <p class="role">Doctoral Candidate – Project 5</p>
+                    <p class="location">📍 Paris Cité University</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>I am a doctoral researcher and Marie Skłodowska-Curie fellow in the EDICT Doctoral Network, based in the METHODS team at the Centre of Research in Epidemiology and Statistics (CRESS, UMR 1153), Université Paris Cité. After training as a medical doctor in Vietnam, I gained clinical research experience at University Medical Center Ho Chi Minh City and OUCRU Vietnam. I then completed an MSc in Epidemiology at the University of Antwerp (Belgium). My thesis applied target trial emulation to occupational health cohort data from Vietnam, where, as in many low- and middle-income countries, research databases are scarce. This experience shaped my interest in using causal inference and real-world data to generate evidence for populations underrepresented in clinical trials. In EDICT Project 5, supervised by Prof. Isabelle Boutron, Dr. Sally Yaacoub and Dr. Neil O'Leary (University of Galway), I am assessing whether target trials can be emulated using real-world data sources such as CONSTANCES and SNDS. I will also identify barriers and possible solutions, and develop a consensus-based framework to support decision-making for underrepresented groups in trials.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 5 - Betelehem Dagnaw Alemu -->
+    <div id="candidate5" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate5')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="betelehem-dagnaw-alemu.jpg" alt="Betelehem Dagnaw Alemu">
+                <div class="cand-modal-info">
+                    <h2>Betelehem Dagnaw Alemu</h2>
+                    <p class="role">Doctoral Candidate – Project 6</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>Betelehem Dagnaw Alemu is a doctoral researcher at the University of Galway, working on EDICT Project 6: Leveraging Artificial Intelligence to Address Disparities. Her research focuses on developing AI-based tools to monitor and improve recruitment equity in clinical trials, with the goal of making trial populations more representative of the people treatments are intended to serve.</p>
+                <p style="margin-top: 16px;">Betelehem holds a BSc and MSc in Electrical and Computer Engineering from Addis Ababa University, Ethiopia, and a second MSc in Communication Technologies and Multimedia from the University of Brescia, Italy. Before joining EDICT, she worked as a Research Fellow at the University of Brescia, applying large language models to cybersecurity research.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 6 - David Arango -->
+    <div id="candidate6" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate6')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="david-arango.jpg" alt="David Arango">
+                <div class="cand-modal-info">
+                    <h2>David Arango</h2>
+                    <p class="role">Doctoral Candidate – Project 14</p>
+                    <p class="location">📍 University of Basel</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>David Arango is a public health professional with an interdisciplinary background spanning public health, community engagement, and global health. His academic and professional experiences have fostered an interest in health equity, inclusive research practices, and the importance of community participation in improving health outcomes. He has engaged in community-focused initiatives and has experience in areas including public health research, epidemiology, and health promotion.</p>
+                <p style="margin-top: 16px;">As part of the EDICT, David is investigating the interactions between patient and public involvement and engagement (PPIE) and equity, diversity, and inclusion (EDI) (Project 14). His work explores how these approaches intersect and how they can contribute to more inclusive, equitable, and meaningful involvement of patients and the public in research. Through this work, he aims to support research practices that recognize diverse perspectives, address barriers to participation, and ensure that a wider range of voices can help shape clinical research.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 7 - Jamie Ann Fuller -->
+    <div id="candidate7" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate7')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="jamie-ann-fuller.jpg" alt="Jamie Ann Fuller">
+                <div class="cand-modal-info">
+                    <h2>Jamie Ann Fuller</h2>
+                    <p class="role">Doctoral Candidate – Project 11</p>
+                    <p class="location">📍 UMC Utrecht</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>Jamie completed her master’s in Philosophy, with a particular interest in Moral Philosophy, at the University of Cape Town.</p>
+                <p style="margin-top: 16px;">She has worked as a digital policy researcher, investigating how digital interventions intersect with socio-economic inequities within and between African countries, and exploring policy options for more just outcomes.</p>
+                <p style="margin-top: 16px;">Based at the UMC Utrecht, Jamie’s EDICT project engages conceptual and ethical challenges involved in advancing EDI in clinical trials. Her research includes analysing what fairness and inclusion mean and require in this context, examining how competing ethical considerations should be weighed, and assessing the justifications for different approaches to EDI. Ultimately, her work aims to inform the implementation of EDI in clinical trials in ways that are morally sound and promote scientific rigour.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 8 - Betty Matsezi Kalama -->
+    <div id="candidate8" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate8')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="betty-matsezi-kalama.jpg" alt="Betty Matsezi Kalama">
+                <div class="cand-modal-info">
+                    <h2>Betty Matsezi Kalama</h2>
+                    <p class="role">Doctoral Candidate – Project 16</p>
+                    <p class="location">📍 University of Aberdeen</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>Betty's professional background spans health research, community engagement, research ethics, and language translation. Betty has an academic background in sociology, economics, and project planning and management.</p>
+                <p style="margin-top: 16px;">She previously worked at the KEMRI-Wellcome Trust Research Programme, bridging research teams and participating communities. Her experience includes qualitative research, community engagement, research ethics, protocol reviews, and training frontline research staff. Betty has also contributed to developing research guidelines, standard operating procedures, and policies. Her work in language translation includes translating research communication materials into local languages, coordinating translation workshops, contributing to the Swahili translation of the TRREE online research ethics course, and developing translation guidelines and a lexicon for complex research terminology.</p>
+                <p style="margin-top: 16px;">Betty is currently pursuing a PhD at the University of Aberdeen through the EDICT Doctoral Network, focusing on language considerations in clinical trials. Her research explores how translation and interpretation can be integrated into trial planning to promote inclusive participation and reduce language-related barriers to clinical research.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 9 - Emmanuella Achiaa Osei-Tutu -->
+    <div id="candidate9" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate9')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="emmanuella-osei-tutu.jpg" alt="Emmanuella Achiaa Osei-Tutu">
+                <div class="cand-modal-info">
+                    <h2>Emmanuella Achiaa Osei-Tutu</h2>
+                    <p class="role">Doctoral Candidate – Project 15</p>
+                    <p class="location">📍 Catholic University of Croatia</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>Dr Emmanuella Achiaa Osei-Tutu is a medical doctor and public health practitioner, with a background spanning clinical practice, preventive medicine, implementation science and global health training. She holds a Bachelor of Medicine and Bachelor of Surgery, an MPH in Global Health and a Certificate in Effective Healthcare Management.</p>
+                <p style="margin-top: 16px;">She is a doctoral candidate on EDICT Project 15, hosted by the Catholic University of Croatia, where her research forms part of Work Package 4 under the mentorship and supervision of Prof. Livia Puljak and Prof. Damir Sapunar. Her research explores stakeholder perspectives on equity, diversity, and inclusion (EDI) in European clinical trials through five coordinated studies involving clinical trialists, ethics committees, research funders, and patients. It examines how EDI is understood, implemented, and governed, and how it is, and is not, embedded in clinical research practice across Europe. The research aims to inform more equitable, accessible, and representative trials.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 10 - Dolores Cviticanin -->
+    <div id="candidate10" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate10')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="dolores-cviticanin.jpg" alt="Dolores Cviticanin">
+                <div class="cand-modal-info">
+                    <h2>Dolores Cviticanin</h2>
+                    <p class="role">Doctoral Candidate – Project 8</p>
+                    <p class="location">📍 La Paz University Hospital</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>Dolores Cviticanin holds an MSc in International Public Policy from University College London and undergraduate degrees from the University of British Columbia and Sciences Po. Her professional experience spans global health policy, health systems, and international research collaborations, with a focus on policy development, patient engagement, and evidence-informed approaches to healthcare. Her research experience includes qualitative and quantitative methods, policy analysis, literature reviews, and stakeholder consultations across international and European research projects.</p>
+                <p style="margin-top: 16px;">As part of Project 8 within Work Package 2, Developing Inclusive and Culturally Diverse Patient Advisory Groups for Enhanced EDI in Clinical Trials, her PhD focuses on developing, implementing, and evaluating a strategy to establish a patient advisory group at FIBHULP. Working with patient associations and the wider public, she aims to strengthen patient involvement in ongoing clinical studies at UCICEC. The project’s findings will inform recommendations for other Spanish hospitals and potentially broader national and international contexts.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 11 - Neveen Ahmed -->
+    <div id="candidate11" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate11')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="neveen-ahmed.jpg" alt="Neveen Ahmed">
+                <div class="cand-modal-info">
+                    <h2>Neveen Ahmed</h2>
+                    <p class="role">Doctoral Candidate – Project 12</p>
+                    <p class="location">📍 University of Galway</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>Neveen is a Marie Skłodowska-Curie Actions (MSCA) Doctoral Fellow in the School of Medicine and the Centre for Health Research Methodology at the University of Galway in Ireland. Under the supervision of Prof. Declan Devane and Dr. Eimear Morrissey, she works on Project 12: the design, piloting, and evaluation of equity, diversity, and inclusion (EDI) training modules for clinical trial teams. Previously, Neveen earned her Bachelor’s degree in Dentistry in Egypt, followed by a Diploma from the Royal College of Surgeons of England. Most recently, as a Fulbright Scholar, she completed her Master’s degree in Global Health Program Design, Monitoring, and Evaluation at Boston University School of Public Health. Neveen has worked across the clinical, humanitarian, and research sectors. Her experience working with people living with HIV, refugees, and survivors of violence has driven her commitment to embedding EDI within the clinical trial ecosystem</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate pop-up 12 - Ashley Boers -->
+    <div id="candidate12" class="cand-modal">
+        <div class="cand-modal-content">
+            <span class="cand-close" onclick="closeCandidate('candidate12')">&times;</span>
+            <div class="cand-modal-header">
+                <img src="ashley-boers.jpg" alt="Ashley Boers">
+                <div class="cand-modal-info">
+                    <h2>Ashley Boers</h2>
+                    <p class="role">Doctoral Candidate – Project 4</p>
+                    <p class="location">📍 University of Basel</p>
+                </div>
+            </div>
+            <div class="cand-modal-bio">
+                <p>With a background in Occupational Therapy, Ashley has developed a strong interest in person-centred healthcare that responds to people’s individual needs and circumstances. Ashley further built her expertise in implementation science, collaborating with stakeholders to bridge the gap between scientific evidence and clinical practice. This experience strengthened her passion for turning research into meaningful impact.</p>
+                <p style="margin-top: 16px;">As part of the EDICT doctoral network, Ashley's research at the University of Basel focuses on developing a Core Outcome Set for EDI implementation in clinical trials: a consensus-based set of outcomes that trials should measure and report to assess equity, diversity and inclusion. By building this consensus with diverse stakeholders, Ashley hopes to highlight the underrepresentation of certain populations and contribute to more inclusive clinical research.</p>
+            </div>
+        </div>
+    </div>
 
     <div id="modals-container"></div>
 
@@ -409,16 +872,6 @@
                             <h3>Secondments</h3>
                             <ul>${p.secondments.filter(s => !s.startsWith('Host:')).map(s => `<li>${s}</li>`).join('')}</ul>
                         </div>
-                        <div class="modal-section">
-                            <h3>Eligibility</h3>
-                            ${p.eligibilityItems ? `<ul>${p.eligibilityItems.map(e => `<li>${e}</li>`).join('')}</ul>` : `<p>${p.eligibility}</p>`}
-                        </div>
-                        <div class="modal-section">
-                            <h3>Salary</h3>
-                            <p>${p.salary}</p>
-                            <p><em>Mandatory deductions (tax and social security contributions) in accordance with national and institutional regulations will apply. The exact net salary will therefore vary by country.</em></p>
-                        </div>
-                        <a href="apply.html" class="btn btn-primary modal-apply-btn">Apply for this PhD Position</a>
                     </div>
                 </div>
             </div>`).join('');
@@ -441,6 +894,26 @@
         if (e.key === 'Escape') {
             document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
             document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Candidate bio pop-ups
+    function openCandidate(id) {
+        document.getElementById(id).style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeCandidate(id) {
+        document.getElementById(id).style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    document.querySelectorAll('.cand-modal').forEach(m => {
+        m.addEventListener('click', function(e) {
+            if (e.target === this) closeCandidate(this.id);
+        });
+    });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.cand-modal').forEach(m => closeCandidate(m.id));
         }
     });
     </script>

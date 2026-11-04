@@ -121,17 +121,6 @@
             font-size: 14px;
             color: var(--text-medium);
         }
-        .cand-copy-link {
-            margin-top: 12px;
-            padding: 6px 14px;
-            font-size: 13px;
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            background: var(--white);
-            color: var(--primary);
-            cursor: pointer;
-        }
-        .cand-copy-link:hover { background: var(--bg-light); }
         .cand-modal {
             display: none;
             position: fixed;
@@ -1031,25 +1020,6 @@
         const slug = slugify(nameEl.textContent);
         candidateSlugs[m.id] = slug;
         slugToCandidate[slug] = m.id;
-
-        // "Copy link" button under the candidate's name
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'cand-copy-link';
-        btn.textContent = '🔗 Copy link to this bio';
-        btn.addEventListener('click', () => {
-            const url = location.origin + location.pathname + '#' + slug;
-            const done = () => {
-                btn.textContent = '✓ Link copied';
-                setTimeout(() => { btn.textContent = '🔗 Copy link to this bio'; }, 2000);
-            };
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(url).then(done, () => prompt('Copy this link:', url));
-            } else {
-                prompt('Copy this link:', url);
-            }
-        });
-        m.querySelector('.cand-modal-info').appendChild(btn);
     });
 
     function openCandidate(id) {

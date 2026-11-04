@@ -121,6 +121,17 @@
             font-size: 14px;
             color: var(--text-medium);
         }
+        .cand-copy-link {
+            margin-top: 12px;
+            padding: 6px 14px;
+            font-size: 13px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: var(--white);
+            color: var(--primary);
+            cursor: pointer;
+        }
+        .cand-copy-link:hover { background: var(--bg-light); }
         .cand-modal {
             display: none;
             position: fixed;
@@ -1006,14 +1017,67 @@
     });
 
     // Candidate bio pop-ups
+    // Each candidate gets a shareable link based on their name,
+    // e.g. projects.html#hasnat-sujon opens Hasnat Sujon's bio directly.
+    const candidateSlugs = {};   // modal id -> slug
+    const slugToCandidate = {};  // slug -> modal id
+    function slugify(text) {
+        return text.normalize('NFD').replace(/[̀-ͯ]/g, '')
+            .toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+    document.querySelectorAll('.cand-modal').forEach(m => {
+        const nameEl = m.querySelector('.cand-modal-info h2');
+        if (!nameEl) return;
+        const slug = slugify(nameEl.textContent);
+        candidateSlugs[m.id] = slug;
+        slugToCandidate[slug] = m.id;
+
+        // "Copy link" button under the candidate's name
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'cand-copy-link';
+        btn.textContent = '🔗 Copy link to this bio';
+        btn.addEventListener('click', () => {
+            const url = location.origin + location.pathname + '#' + slug;
+            const done = () => {
+                btn.textContent = '✓ Link copied';
+                setTimeout(() => { btn.textContent = '🔗 Copy link to this bio'; }, 2000);
+            };
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(done, () => prompt('Copy this link:', url));
+            } else {
+                prompt('Copy this link:', url);
+            }
+        });
+        m.querySelector('.cand-modal-info').appendChild(btn);
+    });
+
     function openCandidate(id) {
-        document.getElementById(id).style.display = 'block';
+        const modal = document.getElementById(id);
+        if (!modal) return;
+        modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        if (candidateSlugs[id] && location.hash !== '#' + candidateSlugs[id]) {
+            history.replaceState(null, '', '#' + candidateSlugs[id]);
+        }
     }
     function closeCandidate(id) {
         document.getElementById(id).style.display = 'none';
         document.body.style.overflow = 'auto';
+        if (candidateSlugs[id] && location.hash === '#' + candidateSlugs[id]) {
+            history.replaceState(null, '', location.pathname + location.search + '#candidates');
+        }
     }
+    function openCandidateFromHash() {
+        const hash = decodeURIComponent(location.hash.slice(1));
+        const id = slugToCandidate[hash] || (candidateSlugs[hash] ? hash : null);
+        if (id) {
+            document.getElementById('candidates').scrollIntoView();
+            openCandidate(id);
+        }
+    }
+    window.addEventListener('hashchange', openCandidateFromHash);
+    openCandidateFromHash();
     document.querySelectorAll('.cand-modal').forEach(m => {
         m.addEventListener('click', function(e) {
             if (e.target === this) closeCandidate(this.id);
